@@ -1,0 +1,1441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<errors>
+  <error dteErrorOccured="10/8/2015" errorID="0">
+    <errorMessage>Unable to cast object of type 'SingleResult`1[TomsFishLog.spGetUserIDResult]' to type 'System.IConvertible'.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.Convert.ToInt32(Object value)
+   at TomsFishLog.DatabaseClass.updateFishLogOptions(Int32 markerSize, Decimal markerOpacity)</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>updateFishLogOptions</methodName>
+    <userID>test1</userID>
+    <time>9:39 PM</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/8/2015" errorID="1">
+    <errorMessage>Unable to cast object of type 'SingleResult`1[TomsFishLog.spGetUserIDResult]' to type 'System.IConvertible'.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.Convert.ToInt32(Object value)
+   at TomsFishLog.DatabaseClass.updateFishLogOptions(Int32 markerSize, Decimal markerOpacity) in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 76</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>updateFishLogOptions</methodName>
+    <userID>test1</userID>
+    <time>9:42 PM</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/8/2015" errorID="2">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 94</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID>test1</userID>
+    <time>2015-10-08T23:37:55.6230912-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/8/2015" errorID="3">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 94</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID>test1</userID>
+    <time>2015-10-08T23:42:04.3283164-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/9/2015" errorID="4">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-09T00:34:04.5287816-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/9/2015" errorID="5">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-09T00:34:28.6911636-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/9/2015" errorID="6">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-09T00:35:22.0692167-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/9/2015" errorID="7">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-09T00:35:57.0562178-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/9/2015" errorID="8">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.updateFishLogOptions(Int32 markerSize, Decimal markerOpacity) in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 75</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>updateFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-09T00:35:57.4742417-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/10/2015" errorID="9">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-10T01:17:12.7850459-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/10/2015" errorID="10">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-10T01:19:08.3816576-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/10/2015" errorID="11">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\Documents\Visual Studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-10T01:22:22.9377856-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/10/2015" errorID="12">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\documents\visual studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-10T11:44:42.0458983-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/10/2015" errorID="13">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\documents\visual studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-10T11:45:08.8804331-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/17/2015" errorID="14">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\documents\visual studio 2015\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-17T23:25:47.1080046-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="10/18/2015" errorID="15">
+    <errorMessage>Object reference not set to an instance of an object.</errorMessage>
+    <source>TomsFishLog</source>
+    <stackTrace>   at TomsFishLog.DatabaseClass.getFishLogOptions() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 90</stackTrace>
+    <pageName>Fish Log</pageName>
+    <className>TomsFishLog.DatabaseClass</className>
+    <methodName>getFishLogOptions</methodName>
+    <userID></userID>
+    <time>2015-10-18T00:47:11.7443898-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="2/21/2016" errorID="16">
+    <errorMessage>The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.</errorMessage>
+    <source>AWSSDK.Core</source>
+    <stackTrace>   at Amazon.Runtime.Internal.HttpErrorResponseExceptionHandler.HandleException(IExecutionContext executionContext, HttpErrorResponseException exception) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\HttpErrorResponseExceptionHandler.cs:line 114
+   at Amazon.Runtime.Internal.ExceptionHandler`1.Handle(IExecutionContext executionContext, Exception exception) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs:line 38
+   at Amazon.Runtime.Internal.ErrorHandler.ProcessException(IExecutionContext executionContext, Exception exception) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs:line 204
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs:line 78
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.Signer.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\Signer.cs:line 38
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CredentialsRetriever.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CredentialsRetriever.cs:line 72
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.RetryHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\RetryHandler\RetryHandler.cs:line 84
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3KmsHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3KmsHandler.cs:line 37
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.EndpointResolver.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\EndpointResolver.cs:line 34
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3PostMarshallHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3PostMarshallHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.Marshaller.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\Marshaller.cs:line 37
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3PreMarshallHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3PreMarshallHandler.cs:line 43
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3ExceptionHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3ExceptionHandler.cs:line 48
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.ErrorCallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs:line 44
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.MetricsHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\MetricsHandler.cs:line 40
+   at Amazon.Runtime.Internal.RuntimePipeline.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\RuntimePipeline.cs:line 135
+   at Amazon.Runtime.AmazonServiceClient.Invoke[TRequest,TResponse](TRequest request, IMarshaller`2 marshaller, ResponseUnmarshaller unmarshaller) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\AmazonServiceClient.cs:line 118
+   at Amazon.S3.AmazonS3Client.PutObject(PutObjectRequest request) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Generated\_bcl45\AmazonS3Client.cs:line 3646
+   at TomsFishLog.Controllers.FishController.UploadToS3(HttpPostedFileBase file) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 230</stackTrace>
+    <pageName>Upload Image</pageName>
+    <className>FishController</className>
+    <methodName>UploadToS3</methodName>
+    <userID>test1</userID>
+    <time>2016-02-21T20:47:00.1457886-06:00</time>
+    <values></values>
+  </error>
+  <error dteErrorOccured="3/22/2016" errorID="17">
+    <errorMessage>Sequence contains no elements</errorMessage>
+    <source>System.Core</source>
+    <stackTrace>   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 47</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID></userID>
+    <time>2016-03-22T21:46:52.8755081-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="3/22/2016" errorID="18">
+    <errorMessage>Sequence contains no elements</errorMessage>
+    <source>System.Core</source>
+    <stackTrace>   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 47</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID></userID>
+    <time>2016-03-22T21:46:53.6065499-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="3/22/2016" errorID="19">
+    <errorMessage>Sequence contains no elements</errorMessage>
+    <source>System.Core</source>
+    <stackTrace>   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 47</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID></userID>
+    <time>2016-03-22T22:40:23.6641547-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="3/22/2016" errorID="20">
+    <errorMessage>Sequence contains no elements</errorMessage>
+    <source>System.Core</source>
+    <stackTrace>   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 47</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID></userID>
+    <time>2016-03-22T22:40:24.4281984-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="3/22/2016" errorID="21">
+    <errorMessage>Sequence contains no elements</errorMessage>
+    <source>System.Core</source>
+    <stackTrace>   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 47</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID></userID>
+    <time>2016-03-22T22:42:12.7983968-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="3/22/2016" errorID="22">
+    <errorMessage>Sequence contains no elements</errorMessage>
+    <source>System.Core</source>
+    <stackTrace>   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 47</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID></userID>
+    <time>2016-03-22T22:42:13.5214382-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2016" errorID="23">
+    <errorMessage>String was not recognized as a valid DateTime.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at TomsFishLog.Controllers.FishController.getWeather(Decimal latitude, Decimal longitude, String dateCaught, String timeCaught) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 183</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>FishController</className>
+    <methodName>getWeather</methodName>
+    <userID>test1</userID>
+    <time>2016-04-03T01:40:11.8770247-05:00</time>
+    <values>dateCaught:, timeCaught:</values>
+  </error>
+  <error dteErrorOccured="4/3/2016" errorID="24">
+    <errorMessage>String was not recognized as a valid DateTime.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at TomsFishLog.Controllers.FishController.getWeather(Decimal latitude, Decimal longitude, String dateCaught, String timeCaught) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 183</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>FishController</className>
+    <methodName>getWeather</methodName>
+    <userID>test1</userID>
+    <time>2016-04-03T01:54:45.2989816-05:00</time>
+    <values>dateCaught:4/3/2016, timeCaught:01:54:10 GMT-0500 (Central Daylight Time)</values>
+  </error>
+  <error dteErrorOccured="4/3/2016" errorID="25">
+    <errorMessage>String was not recognized as a valid DateTime.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at TomsFishLog.Controllers.FishController.getWeather(Decimal latitude, Decimal longitude, String dateCaught, String timeCaught) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 183</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>FishController</className>
+    <methodName>getWeather</methodName>
+    <userID>test1</userID>
+    <time>2016-04-03T02:48:16.9916799-05:00</time>
+    <values>dateCaught:, timeCaught:</values>
+  </error>
+  <error dteErrorOccured="4/4/2016" errorID="26">
+    <errorMessage>Sequence contains no elements</errorMessage>
+    <source>System.Core</source>
+    <stackTrace>   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 48</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID></userID>
+    <time>2016-04-04T22:37:35.8673812-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/4/2016" errorID="27">
+    <errorMessage>Sequence contains no elements</errorMessage>
+    <source>System.Core</source>
+    <stackTrace>   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 48</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID></userID>
+    <time>2016-04-04T22:37:36.6144239-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/30/2017" errorID="28">
+    <errorMessage>String was not recognized as a valid DateTime.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at TomsFishLog.Controllers.FishController.getWeather(Decimal latitude, Decimal longitude, String dateCaught, String timeCaught) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 188</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>FishController</className>
+    <methodName>getWeather</methodName>
+    <userID>test1</userID>
+    <time>2017-04-30T23:32:50.609306-05:00</time>
+    <values>dateCaught:, timeCaught:</values>
+  </error>
+  <error dteErrorOccured="4/30/2017" errorID="29">
+    <errorMessage>String was not recognized as a valid DateTime.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at TomsFishLog.Controllers.FishController.getWeather(Decimal latitude, Decimal longitude, String dateCaught, String timeCaught) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 188</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>FishController</className>
+    <methodName>getWeather</methodName>
+    <userID>test1</userID>
+    <time>2017-04-30T23:32:50.9043229-05:00</time>
+    <values>dateCaught:, timeCaught:</values>
+  </error>
+  <error dteErrorOccured="3/15/2018" errorID="30">
+    <errorMessage>Login failed for user 'DB_9D5A83_TomsFishLog_admin'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Linq.SqlClient.SqlConnectionManager.UseConnection(IConnectionUser user)
+   at System.Data.Linq.SqlClient.SqlProvider.get_IsSqlCe()
+   at System.Data.Linq.SqlClient.SqlProvider.InitializeProviderMode()
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetFishByUser(String username) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 82
+   at TomsFishLog.DatabaseClass.getFishByUsername(String username) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 64</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>getFishByUsername</methodName>
+    <userID></userID>
+    <time>2018-03-15T20:49:15.5619549-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="31">
+    <errorMessage>Could not find stored procedure 'dbo.EnterFish'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.EnterFish(Nullable`1 userID, String strUserName, String strSpecies, String strLocation, Nullable`1 decLength, Nullable`1 decWeight, Nullable`1 decWaterLevel, Nullable`1 decLatitude, Nullable`1 decLongitude) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 68
+   at TomsFishLog.DatabaseClass.EnterFish(String username, Fish fish) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 32</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T21:01:28.4513895-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="32">
+    <errorMessage>Could not find stored procedure 'dbo.spGetFishByUser'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetFishByUser(String username) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 82
+   at TomsFishLog.DatabaseClass.getFishByUsername(String username) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 64</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>getFishByUsername</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T21:05:27.9820898-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="33">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName)
+   at TomsFishLog.DatabaseClass.getUserID()</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T21:31:44.9572876-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="34">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName)
+   at TomsFishLog.DatabaseClass.getUserID()</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T21:31:52.6957303-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="35">
+    <errorMessage>Could not find stored procedure 'dbo.EnterFish'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.EnterFish(Nullable`1 userID, String strUserName, String strSpecies, String strLocation, Nullable`1 decLength, Nullable`1 decWeight, Nullable`1 decWaterLevel, Nullable`1 decLatitude, Nullable`1 decLongitude)
+   at TomsFishLog.DatabaseClass.EnterFish(String username, Fish fish)</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T21:34:19.7931438-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="36">
+    <errorMessage>Could not find stored procedure 'dbo.spGetFishByUser'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetFishByUser(String username)
+   at TomsFishLog.DatabaseClass.getFishByUsername(String username)</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>getFishByUsername</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T21:35:10.8770656-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="37">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 48</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T21:40:18.3526522-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="38">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 48</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T21:40:18.6906715-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="39">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 48</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T21:40:26.8401376-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="40">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 48</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T21:40:26.898141-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/3/2018" errorID="41">
+    <errorMessage>Could not find stored procedure 'dbo.EnterFish'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.EnterFish(Nullable`1 userID, String strUserName, String strSpecies, String strLocation, Nullable`1 decLength, Nullable`1 decWeight, Nullable`1 decWaterLevel, Nullable`1 decLatitude, Nullable`1 decLongitude) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 68
+   at TomsFishLog.DatabaseClass.EnterFish(String username, Fish fish) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 32</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-03T22:19:17.8924662-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/4/2018" errorID="42">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 68</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-04T00:10:35.2923916-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/4/2018" errorID="43">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Documents\Toms Projects 2018\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 68</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-04T00:10:36.051435-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="44">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T15:56:33.5807641-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="45">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T15:56:34.3738095-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="46">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:02:45.4920363-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="47">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:02:46.3350845-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="48">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:07:01.7176915-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="49">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:07:02.4107312-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="50">
+    <errorMessage>Cannot insert the value NULL into column 'UserName', table 'DB_A38EB7_thomasgmiranda.dbo.FishTable'; column does not allow nulls. INSERT fails.
+The statement has been terminated.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spEnterFish(Nullable`1 userID, String species, Nullable`1 dTCaught, Nullable`1 dTEntered, Nullable`1 lengthInches, Nullable`1 weightLbs) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 117
+   at TomsFishLog.DatabaseClass.EnterFish(String username, Fish fish) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 50</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:10:38.3800839-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="51">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:10:59.9193159-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="52">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:11:00.5393513-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="53">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:25:56.4255931-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="54">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:25:57.1456343-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="55">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:26:43.647294-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="56">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 70</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T16:26:44.3193325-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="57">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 78</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T19:38:06.3520672-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="58">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 89
+   at TomsFishLog.DatabaseClass.getUserID() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 78</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T19:38:07.1551131-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/8/2018" errorID="59">
+    <errorMessage>Could not find stored procedure 'dbo.spGetUserID'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetUserID(String strUserName)
+   at TomsFishLog.DatabaseClass.getUserID()</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>EnterFish</methodName>
+    <userID>tom</userID>
+    <time>2018-04-08T19:49:32.9833402-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/13/2018" errorID="60">
+    <errorMessage>Could not find stored procedure 'dbo.spGetFishByUser'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetFishByUser(String username) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 82
+   at TomsFishLog.DatabaseClass.getFishByUsername(String username) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 97</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>getFishByUsername</methodName>
+    <userID>tom</userID>
+    <time>2018-04-13T20:04:19.5152183-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/15/2018" errorID="61">
+    <errorMessage>Could not find stored procedure 'dbo.spGetFishByUser'.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetFishByUser(String username) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 82
+   at TomsFishLog.DatabaseClass.getFishByUsername(String username) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 97</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>getFishByUsername</methodName>
+    <userID>tom</userID>
+    <time>2018-04-15T13:36:48.6583007-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="4/21/2018" errorID="62">
+    <errorMessage>String was not recognized as a valid DateTime.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at TomsFishLog.Controllers.FishController.getWeather(Decimal latitude, Decimal longitude, String dateCaught, String timeCaught) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 188</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>FishController</className>
+    <methodName>getWeather</methodName>
+    <userID>tom</userID>
+    <time>2018-04-21T23:30:19.7709682-05:00</time>
+    <values>dateCaught:, timeCaught:</values>
+  </error>
+  <error dteErrorOccured="4/22/2018" errorID="63">
+    <errorMessage>String was not recognized as a valid DateTime.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at TomsFishLog.Controllers.FishController.getWeather(Decimal latitude, Decimal longitude, String dateCaught, String timeCaught) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 183</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>FishController</className>
+    <methodName>getWeather</methodName>
+    <userID>tom</userID>
+    <time>2018-04-22T14:40:33.5609243-05:00</time>
+    <values>dateCaught:, timeCaught:</values>
+  </error>
+  <error dteErrorOccured="4/22/2018" errorID="64">
+    <errorMessage>String was not recognized as a valid DateTime.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at TomsFishLog.Controllers.FishController.getWeather(Decimal latitude, Decimal longitude, String dateCaught, String timeCaught) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 183</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>FishController</className>
+    <methodName>getWeather</methodName>
+    <userID>tom</userID>
+    <time>2018-04-22T14:40:34.5909832-05:00</time>
+    <values>dateCaught:, timeCaught:</values>
+  </error>
+  <error dteErrorOccured="4/22/2018" errorID="65">
+    <errorMessage>String was not recognized as a valid DateTime.</errorMessage>
+    <source>mscorlib</source>
+    <stackTrace>   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at TomsFishLog.Controllers.FishController.getWeather(Decimal latitude, Decimal longitude, String dateCaught, String timeCaught) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 183</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>FishController</className>
+    <methodName>getWeather</methodName>
+    <userID>tom</userID>
+    <time>2018-04-22T14:40:39.9472896-05:00</time>
+    <values>dateCaught:, timeCaught:</values>
+  </error>
+  <error dteErrorOccured="9/20/2018" errorID="66">
+    <errorMessage>Procedure or function 'spGetSpeciesList' expects parameter '@AnglerId', which was not supplied.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetSpeciesList() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 138
+   at TomsFishLog.DropdownMenus.DefaultSpeciesList() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 351</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>DefaultSpeciesList</methodName>
+    <userID>tom</userID>
+    <time>2018-09-20T17:38:44.825248-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="9/20/2018" errorID="67">
+    <errorMessage>Procedure or function 'spGetSpeciesList' expects parameter '@AnglerId', which was not supplied.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetSpeciesList() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 138
+   at TomsFishLog.DropdownMenus.DefaultSpeciesList() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 351</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>DefaultSpeciesList</methodName>
+    <userID>tom</userID>
+    <time>2018-09-20T17:43:14.0786484-05:00</time>
+    <values />
+  </error>
+  <error dteErrorOccured="9/20/2018" errorID="68">
+    <errorMessage>Procedure or function 'spGetSpeciesList' expects parameter '@AnglerId', which was not supplied.</errorMessage>
+    <source>.Net SqlClient Data Provider</source>
+    <stackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spGetSpeciesList() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 138
+   at TomsFishLog.DropdownMenus.DefaultSpeciesList() in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 351</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>DefaultSpeciesList</methodName>
+    <userID>tom</userID>
+    <time>2018-09-20T17:47:32.8214476-05:00</time>
+    <values />
+  </error>
+</errors>

@@ -1,0 +1,308 @@
+﻿@model List<TomsFishLog.Models.FishModels.Fish>
+@*@{
+    ViewBag.Title = "Log";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+<!-- Loading Google Map API engine v3 -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="~/Scripts/gmap3.js"></script>                             
+
+@* ----  multi select droplist plugin  ------   *@
+@*<link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap-multiselect.js"></script>*@
+
+
+
+<script>
+    var map;
+    var marker = null;
+    var model = @Html.Raw(Json.Encode(Model));
+    //var options = null;
+    setOptions(null);
+
+    function setOptions(data){
+        if (data == null){
+            @{ TomsFishLog.Models.FishModels.FishLogOptions options = (TomsFishLog.Models.FishModels.FishLogOptions)Session["FishLogOptions"]; }
+            options = @Html.Raw(Json.Encode(options));
+        } 
+        else {
+            options.markerOpacity = data.markerOpacity;
+            options.markerSize = data.markerSize;
+        }
+    }
+
+    //Load Options Fields
+    function setOptionsFields(){
+        $("#opt_MarkerOpacity").val(options.markerOpacity);
+        $("#opt_MarkerScale").val(options.markerSize);
+    }
+
+    function getFilterSpecies(speciesArray){
+        // get species list from db.
+        //var jsonData = JSON.stringify(speciesArray);
+
+        //alert(jsonData[0].toString());
+        //var json = JSON.stringify(speciesArray);
+
+        $.ajax({
+            datatype: "json",
+            url: "/Fish/filterSpecies/",
+            type: 'POST',
+            traditional:true,
+            data: { species: $('#speciesList').val()
+            },
+            success: function (data) {
+
+            },
+            error: function () {
+                alert("Error Filtering Species"());
+            }
+        });
+
+
+    }
+
+
+    function initialize() {
+        var mapOptions = {
+            zoom: 13,
+            disableDefaultUI: false,
+            center: new google.maps.LatLng(44.073280448966436, -91.65181159973145), //center map on this location
+            mapTypeId: google.maps.MapTypeId.SATELLITE
+        };
+
+        //todo: add test points on the map so you can test and compare icon styles side by side. Just hardcode like 10 points down the side of the screen
+        var myIcon = {
+            path : google.maps.SymbolPath.CIRCLE,
+            //path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+            fillColor: 'black',
+            fillOpacity: options.markerOpacity,
+            scale: options.markerSize,
+            strokeColor: 'white',
+            strokeWeight: .5
+        };
+
+        function setColorsBySpecies (species){
+            switch(species) {
+                case 'Bass':
+                    myIcon.fillColor = 'green';
+                    break;
+                case 'Walleye':
+                    myIcon.fillColor = 'yellow';
+                    break;
+                case 'Flathead Catfish':
+                    myIcon.fillColor = 'brown';
+                    break;
+                case 'Channel Catfish':
+                    myIcon.fillColor = 'grey';
+                    break;
+                default:
+                    myIcon.fillColor = 'black';
+                    break;
+            }
+        };
+
+        setOptionsFields();
+
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        for (var i = 0; i < model.length; i++) {
+            if (model[i].decLatitude != null && model[i].decLongitude != null) {
+                var latLng = new google.maps.LatLng(model[i].decLatitude, model[i].decLongitude); //set latLng for each location in list
+
+                setColorsBySpecies(model[i].strSpecies);
+
+                marker = new google.maps.Marker({
+                    position: latLng,
+                    icon: myIcon,
+                    //draggable: true,
+                    map: map
+                });
+
+                //marker click handler
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        alert(i);
+                    }
+                })(marker, i));
+            };
+        };
+
+
+
+        //    //delete the old marker
+        //    if (marker) { marker.setMap(null); }
+
+        //    //set new marker
+        //    //marker = new google.maps.Marker({ position: event.latLng, map: map });
+    }
+
+    //function getFishLogOptions (){
+    //    $.ajax({
+    //        datatype: "json",
+    //        url: "/Fish/getFishLogOptions/",
+    //        type: 'POST',
+    //        success: function (data) {
+    //            userMarkerSize = parseInt(data.markerSize);
+    //            userMarkerOpacity = parseFloat(data.markerOpacity);
+
+    //            //TODO !!!!!!!!  Just load options into an object in session, then if they update them, save to db and reload the object in session.
+    //            //     this way you can just use it like an Model object with the @@ObjectName.property method, and it should be available everywhere. Could even possibly think
+    //            // about making the map a partial, but I think there is going to be so much interaction with the FishLog half of the page idk if thats a good idea. Maybe thats more
+    //            // reason to do a partial...idk....this comment got long. Maybe move some of these thoughts to onenote eventually
+    //        },
+    //        error: function () {
+    //            alert("error loading user options")
+    //        }
+    //    });
+    //}
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    $(document).ready(function(){
+
+        function openMapOptions(){
+            ////optionsOpen = true;
+            $("#optionsBtn").addClass("active");
+
+            $('#overlay').fadeIn('fast',function(){                 //todo: overlay not fading in here?
+                //$('#optionsDiv').animate({'top':'160px'},250);
+                $("#optionsDiv").fadeIn(250);
+            });
+        }
+
+        function closeMapOptions(){
+            $("#optionsBtn").removeClass("active");
+            $("#optionsDiv").fadeOut(250);
+            $('#overlay').fadeOut('fast');
+        }
+
+        $('#optionsBtn').click(function(){
+            openMapOptions();
+        });
+
+        $('#cancelOptionsBtn').click(function(){
+            closeMapOptions();
+        });
+
+        $("#applyOptionsBtn").click(function(){
+            saveOptions();
+        });
+
+        function saveOptions (){
+            $.ajax({
+                datatype: "json",
+                url: "/Fish/updateFishLogOptions/",
+                type: 'POST',
+                data: { 'markerSize': $("#opt_MarkerScale").val(),
+                    'markerOpacity': $("#opt_MarkerOpacity").val()
+                },
+                success: function (data) {
+                    setOptions(data);
+                    //options = JSON.parse(data);
+                    initialize();
+                    //google.maps.event.trigger(map, 'resize');  //do this instead of full initilize sometimes?
+                    //todo: have an overlay over the background when map options is up, and use it to hide the flash whey you reload map, then once its reloaded, closeMapOptions and remove overlay
+                    closeMapOptions();
+                    //todo: if something changed in options that would affect the map:
+
+                },
+                error: function () {
+                    alert("Error Updating Map Options = " + data.toString());
+                    closeMapOptions();
+                }
+            });
+        }
+
+
+        $('#speciesList').multiselect({
+            includeSelectAllOption: true,
+            onDropdownHide: function(event) {
+                //var selectedOptions = $('#speciesList option:selected').val();
+                //var selectedOptions = $('#speciesList option:selected').map(function(a, item){return item.value;});;
+                getFilterSpecies();
+                //getFilterSpecies(selectedOptions);
+            }
+        });
+
+     
+    });
+
+    
+</script>
+
+    <div class="row">
+        <button id="optionsBtn" type="button" class="btn btn-primary optionsBtn" data-toggle="button">Options</button>
+        <div class="overlay" id="overlay" hidden="hidden"></div>
+        <div id="map" class="map"></div>
+    </div>
+
+    
+
+    <div class="optionsDiv" id="optionsDiv" hidden="hidden">
+        <h1>Fish Log Options</h1>
+        <div>
+            <ul class="listStyleNone inp">
+                <li>@Html.Label("opt_MarkerScale", "Marker Scale", new { @class= "w250" }) @Html.TextBox("opt_MarkerScale", null, null, new { @class= "input-xsml w60" })</li>
+                <li>@Html.Label("lbl_opt_MarkerScale", "Marker Transparency", new { @class = "w250" }) @Html.TextBox("opt_MarkerOpacity", null, null, new { @class = "input-xsml w60" })</li>
+            </ul>
+            <p>
+                Now just add fancy button incrementers and checkboxes, radio btns, toggles, etc. Just give it a save button and save them all there with the .ajax thing.
+                Then you can have a close/cancel btn. Then its less calls to the DB and they can have a cancel btn.
+            </p>
+        </div>
+        <div id="optionsBtns" class="text-center">
+            <button id="applyOptionsBtn" class="btn btn-primary w100">Apply</button>
+            <button id="cancelOptionsBtn" class="btn btn-primary w100">Cancel</button>
+        </div>
+    </div>
+
+    <div class="my-fluid-container">
+
+        <div class="row">
+            <div>
+                <div class="col-md-6">
+                    <div id="sortDiv" class="border1">
+                        <div>Species: @Html.DropDownList("speciesList", (IEnumerable<SelectListItem>)ViewData["SpeciesList"], new { name="speciesList[]", multiple = "multiple" })</div>
+                    </div>
+                    <table class="FishTable">
+                            <tr>
+                                <td>Species</td>
+                                <td>Location</td>
+                                <td>Length</td>
+                                <td>Weight</td>
+                                <td>Date Entered</td>
+                                <td>Select</td>
+                            </tr>
+                        @foreach (var m in Model)
+                {
+                            <tr>
+                                <td>@m.strSpecies</td>
+                                <td>@m.strLocationName</td>
+                                <td>@m.decLenthInches</td>
+                                <td>@m.decWeightLbs</td>
+                                <td>@m.dteDateTimeEntered.ToShortDateString() @m.dteDateTimeEntered.ToShortTimeString()</td>
+                                <td>@Html.ActionLink("Select", "map_SelectFishCoords", new { lat = m.decLatitude, lng = m.decLongitude })</td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+                <div class="col-md-6">
+
+                    Fish Details here.
+                    Put map on top and make it full screen with no margins. It will look really nice. Controls/legend/sort on a bar right below the map (about halfway down the page)
+                    Then list + details on bottom half of the screen. Do jquery or css checks(yea...try the @@media css stuff...) to make it so the map is always full screen width. <br />
+                    On mobile it will be full screen with pop-over menus and fish lists.<br /><br />
+                    Fuck these borders. Just do a bottom border that is 100% wide.
+                    <br /><br />Fix padding-top on body to close gap between header and map. 
+                    @*<div id="coordinate" class="well well-sm"></div>
+                    <div id="zoomLevel" class="well well-sm"></div>*@
+                    @*other examples here
+
+                        https://developers.google.com/maps/documentation/javascript/examples/map-simple*@
+                </div>
+            </div>
+        </div>
+        
+    </div>

@@ -1,0 +1,47 @@
+﻿<!-- Loading Google Map API engine v3 -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+<script>
+    var map;
+    var marker = null;
+
+    function initialize() {
+
+        var mapOptions = {
+            zoom: 13,
+            disableDefaultUI: false,
+            center: new google.maps.LatLng(44.073280448966436, -91.65181159973145), //center on sherbrooke
+            mapTypeId: google.maps.MapTypeId.SATELLITE
+        };
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        google.maps.event.addListener(map, 'click', function(event) {
+        //call function to create marker
+
+            $("#coordinate").text(event.latLng.lat() + ", " + event.latLng.lng());
+            $("#coordinate").select();
+
+            //delete the old marker
+            if (marker) { marker.setMap(null); }
+
+            //set new marker
+            marker = new google.maps.Marker({ position: event.latLng, map: map});
+            
+
+            $("#zoomLevel").text(map.getZoom().toString());
+        });
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+
+<div id="map" style="width:470px; height:320px;"></div>
+
+<div id="coordinate" class="well well-sm"></div>
+<div id="zoomLevel" class="well well-sm"></div>
+@*other examples here
+
+https://developers.google.com/maps/documentation/javascript/examples/map-simple*@

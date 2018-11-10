@@ -1,0 +1,525 @@
+﻿
+@{
+    ViewBag.Title = "Enter Fish";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Loading Google Map API engine v3 -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="~/Scripts/gmap3.js"></script>                               @*http://gmap3.net/en/pages/5-getting-started/#downloading-gmap3-12*@
+
+<script src="~/Scripts/Plugins/skycons.js"></script>  @*  weather icons  *@
+
+@*for the fileupload thing, found here: http://www.dotnetawesome.com/2014/10/how-to-upload-files-asynchronously-using-aspnet-mvc4-application.html*@
+<script src="http://malsup.github.com/jquery.form.js"></script>
+
+@*<link type="text/css" rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" />
+@*<link type="text/css" rel="stylesheet" href="http://http://gregfranko.com/jquery.selectBoxIt.js/css/jquery.selectBoxIt.css" />*@
+
+@*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>*@
+@*<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>*@
+@*<script src="http://gregfranko.com/jquery.selectBoxIt.js/js/jquery.selectBoxIt.min.js"></script>*@
+
+<script>
+    var map;
+    var marker = null;
+    var markerLat = null;
+    var markerLng = null;
+
+    var mapOptions = {
+        zoom: 13,
+        disableDefaultUI: false,
+        center: new google.maps.LatLng(44.073280448966436, -91.65181159973145), //center map on this location
+        mapTypeId: google.maps.MapTypeId.SATELLITE
+    };
+
+    var viewport = {
+        width: window.screen.width,
+        height: window.screen.height
+    };
+
+
+    // **************************************************
+    // ********************************
+    // Google Maps Stuff *******
+    function initializeMap() {
+
+        if (viewport.width > 750) {
+            $(".loc1").hide();
+            $(".loc2").show();
+            //$("#map2").height(viewport.height * .75);
+            map = new google.maps.Map(document.getElementById('map2'), mapOptions);
+        }
+        else {
+            $(".loc1").show();
+            $(".loc2").hide();
+            $("#map1").height(viewport.height * .77);
+            map = new google.maps.Map(document.getElementById('map1'), mapOptions);
+        }
+
+
+        google.maps.event.addListener(map, 'click', function (event) {
+            //call function to create marker
+
+            $("#coordinate").text(event.latLng.lat() + ", " + event.latLng.lng());
+            $("#coordinate2").text(event.latLng.lat() + ", " + event.latLng.lng());
+            $("#coordinate").select();
+
+            //delete the old marker
+            if (marker) { marker.setMap(null); }
+
+            //set new marker
+            marker = new google.maps.Marker({ position: event.latLng, map: map });
+            markerLat = event.latLng.lat();
+            markerLng = event.latLng.lng();
+
+            $("#decLatitude").val(event.latLng.lat());
+            $("#decLongitude").val(event.latLng.lng());
+
+        });
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', initializeMap);
+
+    $(document).ready(function () {
+
+        $(".map").width(window.screen.width);
+        $(".map").width(window.screen.height);
+
+        $("#enterFishSubmit").click(function () {
+            if ($("#speciesList").val() == "Add Species") {
+                $("#strSpecies").val(($("#newSpeciesTextBox").val()))
+                $("#fishForm").submit();
+            }
+            else {
+                $("#strSpecies").val(($("#speciesList").val()))
+                $("#fishForm").submit();
+            }
+
+        });
+
+        $("#testBtn").click(function () {
+            $("#decLenthInches").val("99");
+            $("#decWeightLbs").val("99");
+            $("#strLocation").val("99");
+            $("#strLocation").val("99");
+            $("#decWaterLevel").val("99");
+        });
+
+        $("#speciesList").change(function () {
+            if ($("#speciesList").val() == "Add Species") {
+                $("#speciesDiv").hide(0, $("#newSpeciesDiv").show());
+            }
+        })
+
+        $("#newSpeciesCancelBtn").click(function () {
+            $("#newSpeciesDiv").hide(0, $("#speciesDiv").show());
+        });
+
+        $("#addImageBtn").click(function () {
+            $("#optionsDiv").fadeIn(250);
+        });
+
+
+        $("#getWeatherBtn").click(function () {
+            getWeather();
+        });
+
+        $("#weatherRefreshBtn").click(function () {
+            getWeather();
+        });
+
+
+        $("#dateTimeTestBtn").click(function () {
+            var dt = new Date($.now());
+            var date = dt.toLocaleDateString();
+            var time = dt.toLocaleTimeString();
+
+            $("#dteDateTimeCaught_Date").val(date);
+            $("#dteDateTimeCaught_TimeOfDay").val(time);
+        });
+
+        
+
+        function getWeather() {
+            if (markerLat == null || markerLng == null) {
+                alert("no location for weather")
+                return;
+            }
+
+            var imageDt = null; // get this from datepicker eventually
+            var dateCaught = $("#dteDateTimeCaught_Date").val();
+            var timeCaught = $("#dteDateTimeCaught_TimeOfDay").val();
+
+            $.ajax({
+                url: "/Fish/getWeather",
+                datatype: "text",
+                data: { 'latitude': markerLat, 'longitude': markerLng, 'dateCaught': dateCaught, 'timeCaught': timeCaught },
+                type: "POST",
+                success: function (data) {
+                    if (data == false) {
+                        alert("datetime error");
+                    }
+                    else {
+                        $("#weatherBasics").show();
+                        $("#temp").html(data.temp + "&deg;" + ", feels like:" + data.feelsLike);
+                        $("#weatherDesc").text(data.summary);
+                        $("#iconText").text(data.icon);
+                        $("#windSpeed").text("Wind Speed: " + data.windSpd);
+                        $("#windDirection").text("Bearing: " + data.windDir);
+
+
+                        $("#weatherRefreshBtn").show();
+                        $("#getWeather").hide();
+                        drawIcon(data.icon);
+                    }
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+
+
+        function drawIcon(icon) {
+            var skycons = new Skycons({ "color": "#428bca" });
+            // on Android, a nasty hack is needed: {"resizeClear": true}
+
+            // you can add a canvas by it's ID...
+            //skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
+
+            // ...or by the canvas DOM element itself.
+            //skycons.add(document.getElementById("icon2"), Skycons.RAIN);
+
+            // if you're using the Forecast API, you can also supply
+            // strings: "partly-cloudy-day" or "rain".
+
+            skycons.add("icon1", icon);
+
+
+
+            // start animation!
+            skycons.play();
+
+            // you can also halt animation with skycons.pause()
+
+            // want to change the icon? no problem:
+            //skycons.set("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
+
+            // want to remove one altogether? no problem:
+            //skycons.remove("icon2");
+        }
+
+
+        (function () {
+            var bar = $('#progress-bar');
+            var percent = $('#progress-bar');
+            var status = $('#status');
+
+            $('#UploadImage').ajaxForm({
+                beforeSend: function () {
+                    status.empty();
+                    var percentValue = '0%';
+                    bar.width(percentValue);
+                    percent.html(percentValue);
+                },
+                uploadProgress: function (event, position, total, percentComplete) {
+                    var percentValue = percentComplete + '%';
+                    bar.width(percentValue);
+                    percent.html(percentValue);
+                },
+                success: function (data) {
+                    var percentValue = '100%';
+                    bar.width(percentValue);
+                    percent.html(percentValue);
+                    $('#fu1').val('');
+                    //alert(d);
+                    $("#uploadDiv").hide();
+                    $("#imageDiv").show();
+
+                    //show image
+                    $("#fishThumb").attr("src", data.url)
+
+                    //set marker on map
+                    var imageLat = data.latitude;
+                    var imageLng = data.longitude;
+                    var imgLatLng = new google.maps.LatLng(imageLat, imageLng);
+
+                    //set global markerCoords variables for use with other stuff
+                    markerLat = imageLat;
+                    markerLng = imageLng;
+
+                    if (marker) { marker.setMap(null); }                                      //delete the old marker
+                    marker = new google.maps.Marker({ position: imgLatLng, map: map });    //set new marker
+                    mapOptions.center = new google.maps.LatLng(imageLat, imageLng); //center map on this location
+
+
+                    //fill in date and time caught
+                    $("#dteDateTimeCaught_Date").val(data.imageDate);
+                    $("#dteDateTimeCaught_TimeOfDay").val(data.imageTime);
+
+                    map.panTo(imgLatLng);
+
+                    //map.reloadMap();
+                },
+                complete: function (url) {
+                    //status.html(xhr.responseText);
+
+                }
+            });
+
+        })();
+
+    });
+</script>
+
+
+
+@model TomsFishLog.Models.FishModels.Fish
+
+
+
+<h2>Enter a Fish</h2>
+
+<div class="optionsDiv" id="optionsDiv" hidden="hidden">
+    <div id="optionsBtns" class="text-center">
+        @*<h1>Add an Image</h1>*@
+
+        @*@using (Ajax.BeginForm("AsyncUpload", "Upload", new AjaxOptions() { HttpMethod = "POST" }, new { enctype = "multipart/form-data", id = "UploadImage" }))
+        {
+            @Html.AntiForgeryToken()
+            <input type="file" name="files" id="fu1" class="btn btn-default center"/>
+            <input type="submit" value="Upload File" />
+
+        }*@
+
+        @*<div class="progress" id="progress">
+            <div class="progress-bar" id="progress-bar">0%</div>
+        </div>*@
+        @*<div id="status"></div>*@
+
+        @*<h6 class="text-center">
+            OR
+        </h6>*@
+        @*<button id="applyOptionsBtn" class="btn btn-primary fontLarge">Take a Picture</button>*@
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+
+
+                <div class="sectionHeader">Upload an Image</div>
+                <div id="uploadImage" class="section">
+
+                    <div id="uploadDiv">
+                        @using (Ajax.BeginForm("AsyncUpload", "Upload", new AjaxOptions() { HttpMethod = "POST" }, new { enctype = "multipart/form-data", id = "UploadImage" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="file" name="files" id="fu1" class="btn btn-default center" />
+                            <input type="submit" value="Upload File" />
+                        }
+
+                        <div class="progress" id="progress">
+                            <div class="progress-bar" id="progress-bar">0%</div>
+                        </div>
+                        @*<div id="status"></div>*@
+
+                        <h6 class="text-center">
+                            OR
+                        </h6>
+                        <button id="applyOptionsBtn" class="btn btn-primary fontLarge">Take a Picture</button>
+                    </div>
+
+                    <div id="imageDiv" hidden="hidden">
+                        <img id="fishThumb" />
+                    </div>
+                </div>
+
+
+                @using (Html.BeginForm("submitFish", "Fish", FormMethod.Post, new { id = "fishForm" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.HiddenFor(m => m.decLatitude)
+                    @Html.HiddenFor(m => m.decLongitude)
+                    @Html.HiddenFor(m => m.strSpecies)
+
+
+                    <div class="sectionHeader">Fish</div>
+                        <div id="fishInfo" class="section">
+                            <ul class="list">
+                                <li id="input_dateTime">
+                                    @Html.Label("dateCaught", "Date")
+                                    @Html.TextBoxFor(m => m.dteDateTimeCaught.Date, null, new { @class = "form-control textboxMed", @data_role="date" })
+                                    @Html.Label("timeCaught", "Time")
+                                    @Html.TextBoxFor(m => m.dteDateTimeCaught.TimeOfDay, null, new { @class = "form-control textboxMed" })
+                                    <button id="dateTimeTestBtn" type="button" class="btn-primary fontMed">Test</button>
+                                </li>
+                                <li id="input_species">
+                                    @Html.Label("speciesList", "Species")
+                                    @Html.DropDownList("speciesList", TomsFishLog.DropdownMenus.DefaultSpeciesList(), null, new { @class = "form-control" })
+                                </li>
+                                <li id="input_length">
+                                    @Html.Label("decLenthInches", "Length", new { @class = "left" })
+                                    @Html.TextBoxFor(m => m.decLenthInches, null, new { @class = "form-control textBoxSm both" })
+
+                                </li>
+                                <li id="input_weight">
+                                    @Html.Label("decWeightLbs", "Weight", new { @class = "left" })
+                                    @Html.TextBoxFor(m => m.decWeightLbs, null, new { @class = "form-control textBoxSm both" })
+                                </li>
+                            </ul>
+                            @*<div id="input_dateTime">
+                                @Html.Label("dateCaught", "Date")
+                                @Html.TextBoxFor(m => m.dteDateTimeEntered.Date, null, new { @class = "form-control textBoxSm " })
+                                @Html.Label("timeCaught", "Time")
+                                @Html.TextBoxFor(m => m.dteDateTimeEntered.TimeOfDay, null, new { @class = "form-control textBoxSm " })
+                            </div>*@
+
+                            @*<div id="input_species">
+                                @Html.Label("speciesList", "Species")
+                                @Html.DropDownList("speciesList", TomsFishLog.DropdownMenus.DefaultSpeciesList(), null, new { @class = "form-control" })
+                            </div>*@
+
+                            @*<div id="input_length">
+                                @Html.Label("decLenthInches", "Length", new { @class = "left" })
+                                @Html.TextBoxFor(m => m.decLenthInches, null, new { @class = "form-control textBoxSm both" })
+                            </div>*@
+
+                            @*<div id="input_weight">
+                                @Html.Label("decWeightLbs", "Weight", new { @class = "left" })
+                                @Html.TextBoxFor(m => m.decWeightLbs, null, new { @class = "form-control textBoxSm both" })
+                            </div>*@
+                        </div>
+
+
+                        <div class="sectionHeader loc1">Location</div>
+                        <div id="locationInfo1" class="section loc1">
+
+                            <div id="map1" class="map" @*style="width:470px; height:320px;"*@></div>
+
+                            <div id="coordinate" class="well well-sm"></div>
+
+                            @*other examples here
+                                https://developers.google.com/maps/documentation/javascript/examples/map-simple*@
+
+                            <div id="input_locationName" class="pad1">
+                                @Html.Label("strLocationName", "Location Name", new { @class = "left" })
+                                @Html.TextBoxFor(m => m.strLocationName, null, new { @class = "form-control textBoxLg both" })
+                            </div>
+
+
+
+
+                            @*<div id="input_waterLevel">
+                                    @Html.Label("decWaterLevel", "Water Level", new { @class = "left" })
+                                    @Html.TextBoxFor(m => m.decWaterLevel, null, new { @class = "form-control textBoxSm both" })
+                                </div>*@
+
+                            @* coords *@
+                            @* location Name *@
+                            @* body of water name  *@
+                            @* this would also include stuff like water level, water temp, water clarity *@
+                        </div>
+
+
+                        <div class="sectionHeader">Weather <button type="button" class="btn-primary fontMed right" id="weatherRefreshBtn" href="" hidden="hidden">Refresh</button></div>
+                        <div id="weatherInfo" class="section">
+                            <div id="getWeather">
+                                <button id="getWeatherBtn" type="button" class="btn-primary fontMed">Get Weather</button>
+                            </div>
+                            <div id="weatherBasics" class="left both" hidden="hidden">
+                                <ul class="list">
+                                    <li>
+                                        <div class="left">
+                                            <div id="weatherDesc" class="left t1"></div>
+                                            <div id="temp" class="left both t1"></div>
+                                            <div id="feelsLikeTemp" class="left both t1"></div>
+                                            <div id="windSpeed" class="left both t1"></div>
+                                            <div id="windDirection" class="left both t1"></div>
+
+                                            @*<div id="iconText" class="left both t1"></div>*@
+                                            @*  <div id="weatherIcon"></div>*@
+                                        </div>
+                                        <canvas id="icon1" width="64" height="64" style="margin-left:20px;"></canvas>
+                                    </li>
+                                </ul>
+
+                                <div class="left">
+                                    @*right column*@
+                                </div>
+                            </div>
+                            <div id="weatherDetail left " hidden="hidden">
+                                WeatherDetail
+                            </div>
+                        </div>
+
+                        <div class="sectionHeader">Tackle</div>
+                        <div id="tackleInfo" class="section">
+
+                        </div>
+
+                        <div>
+                            @*<ul class="listStyleNone">
+                                <li>
+                                    <div id="speciesDiv">*@
+                                        @*<div>Species:</div><div> @Html.ListBox("speciesList", TomsFishLog.DropdownMenus.DefaultSpeciesList(), null)</div>*@
+                                        @*@Html.Label("speciesList", "Species", new { @class = "label1" })
+                                            @Html.DropDownList("speciesList", TomsFishLog.DropdownMenus.DefaultSpeciesList(), null, new { @class = "form-control" })*@
+
+                                    @*</div>
+                                    <div class="left" id="newSpeciesDiv" hidden="hidden">
+                                        <div>New Species Name: @Html.TextBox("newSpeciesTextBox", null, new { style = "width:120px;" })</div>
+                                        <div id="addSpeciesBtn" class="btn btn-sm btnDiv">Add Species</div><div id="newSpeciesCancelBtn" class="btn btn-sm btnDiv">Cancel</div>
+                                    </div>
+                                </li>
+
+                            </ul>*@
+
+
+                            <br />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input id="addImageBtn" type="button" value="Add an Image" class="btn btn-default" />
+                                </div>
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input id="enterFishSubmit" type="button" value="Enter Fish" class="btn btn-default" />
+                                    <input id="testBtn" type="button" value="testBtn" class="btn btn-default" />
+                                </div>
+                            </div>
+
+                        </div>
+                        }
+
+                    </div>
+            <div class="col-md-6">
+
+                <div class="sectionHeader loc2">Location</div>
+                <div id="locationInfo2" class="section loc2" style="padding:0px;" hidden="hidden">
+
+                    <div id="map2" class="map"></div>
+
+                    @*other examples here
+            https://developers.google.com/maps/documentation/javascript/examples/map-simple*@
+
+                    <div id="input_locationName">
+                        @Html.Label("strLocationName", "Location Name", new { @class = "left" })
+                        @Html.TextBoxFor(m => m.strLocationName, null, new { @class = "form-control textBoxLg both" })
+                    </div>
+                    <div id="coordinate2" class="well well-sm"></div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

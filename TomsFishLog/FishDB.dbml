@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_A38EB7_thomasgmiranda" Class="FishDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=sql5020.site4now.net;Initial Catalog=DB_A38EB7_thomasgmiranda;Persist Security Info=True;User ID=DB_A38EB7_thomasgmiranda_admin" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_A38EB7_thomasgmirandaConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.EnterFish" Method="EnterFish">
+    <Parameter Name="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="strUserName" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="strSpecies" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="strLocation" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="decLength" Type="System.Decimal" DbType="Decimal(6,2)" />
+    <Parameter Name="decWeight" Type="System.Decimal" DbType="Decimal(7,2)" />
+    <Parameter Name="decWaterLevel" Type="System.Decimal" DbType="Decimal(5,2)" />
+    <Parameter Name="decLatitude" Type="System.Decimal" DbType="Decimal(9,6)" />
+    <Parameter Name="decLongitude" Type="System.Decimal" DbType="Decimal(9,6)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetFishByUser" Method="spGetFishByUser">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="spGetFishByUserResult">
+      <Column Name="FishId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="strUsername" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="strSpecies" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="decWeightLbs" Type="System.Decimal" DbType="Decimal(7,2)" CanBeNull="true" />
+      <Column Name="decLengthInches" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="strLocationName" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="decWaterLevel" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="dteTimeEntered" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="decLatitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
+      <Column Name="decLongitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetUserID" Method="spGetUserID">
+    <Parameter Name="strUserName" Type="System.String" DbType="VarChar(256)" />
+    <ElementType Name="spGetUserIDResult">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdateUserOptions" Method="spUpdateUserOptions">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MarkerSize" Parameter="markerSize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MarkerOpacity" Parameter="markerOpacity" Type="System.Decimal" DbType="Decimal(6,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetUserOptions" Method="spGetUserOptions">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetUserOptionsResult">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MarkerSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MarkerOpacity" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getFishFromSpeciesCSV" Method="getFishFromSpeciesCSV">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="speciesString" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="getFishFromSpeciesCSVResult">
+      <Column Name="FishId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="strUsername" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="strSpecies" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="decWeightLbs" Type="System.Decimal" DbType="Decimal(7,2)" CanBeNull="true" />
+      <Column Name="decLengthInches" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="strLocationName" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="decWaterLevel" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="dteTimeEntered" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="decLatitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
+      <Column Name="decLongitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spEnterFish" Method="spEnterFish">
+    <Parameter Name="UserID" Parameter="userID" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="Species" Parameter="species" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DTCaught" Parameter="dTCaught" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DTEntered" Parameter="dTEntered" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="LengthInches" Parameter="lengthInches" Type="System.Decimal" DbType="Decimal(5,2)" />
+    <Parameter Name="WeightLbs" Parameter="weightLbs" Type="System.Decimal" DbType="Decimal(5,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCreateAnglerID" Method="spCreateAnglerID">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(128)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetAnglerID" Method="spGetAnglerID">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(128)" />
+    <ElementType Name="spGetAnglerIDResult">
+      <Column Name="AnglerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInsertImage" Method="spInsertImage">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="thumbObjectKey" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="thumbUrl" Type="System.String" DbType="NVarChar(1024)" />
+    <Parameter Name="thumbExpires" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fullSizeObjectKey" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="fullSizeUrl" Type="System.String" DbType="NVarChar(1024)" />
+    <Parameter Name="fullSizeExpires" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetLast5FishById" Method="spGetLast5FishById">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(128)" />
+    <ElementType Name="spGetLast5FishByIdResult">
+      <Column Name="SpeciesID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SpeciesName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DTCaught" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetSpeciesList" Method="spGetSpeciesList">
+    <Parameter Name="AnglerId" Parameter="anglerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetSpeciesListResult">
+      <Column Name="speciesID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SpeciesName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

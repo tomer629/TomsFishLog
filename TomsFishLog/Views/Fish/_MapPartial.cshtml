@@ -1,0 +1,206 @@
+﻿@model List<TomsFishLog.Models.FishModels.Fish>
+
+<!-- Loading Google Map API engine v3 -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="~/Scripts/gmap3.js"></script>                               @*http://gmap3.net/en/pages/5-getting-started/#downloading-gmap3-12*@
+
+<script>
+    var map;
+    var marker = null;
+    var model = @Html.Raw(Json.Encode(Model));
+
+    function initialize() {
+        @{ TomsFishLog.Models.FishModels.FishLogOptions options = (TomsFishLog.Models.FishModels.FishLogOptions)Session["FishLogOptions"]; }
+        var options = @Html.Raw(Json.Encode(options));
+
+        var mapOptions = {
+            zoom: 13,
+            disableDefaultUI: false,
+            center: new google.maps.LatLng(44.073280448966436, -91.65181159973145), //center map on this location
+            mapTypeId: google.maps.MapTypeId.SATELLITE
+        };
+
+        //todo: add test points on the map so you can test and compare icon styles side by side. Just hardcode like 10 points down the side of the screen
+        var myIcon = {
+            path : google.maps.SymbolPath.CIRCLE,
+            //path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+            fillColor: 'black',
+            fillOpacity: options.markerOpacity,
+            scale: options.markerSize,
+            strokeColor: 'white',
+            strokeWeight: .5
+        };
+
+        function setColorsBySpecies (species){
+            switch(species) {
+                case 'Bass':
+                    myIcon.fillColor = 'green';
+                    break;
+                case 'Walleye':
+                    myIcon.fillColor = 'yellow';
+                    break;
+                case 'Flathead Catfish':
+                    myIcon.fillColor = 'brown';
+                    break;
+                case 'Channel Catfish':
+                    myIcon.fillColor = 'grey';
+                    break;
+                default:
+                    myIcon.fillColor = 'black';
+                    break;
+            }
+        };
+
+        //Load Options Fields
+        $("#opt_MarkerOpacity").val(options.markerOpacity);
+        $("#opt_MarkerScale").val(options.markerSize);
+
+
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        for (var i = 0; i < model.length; i++) {
+            if (model[i].decLatitude != null && model[i].decLongitude != null) {
+                var latLng = new google.maps.LatLng(model[i].decLatitude, model[i].decLongitude); //set latLng for each location in list
+
+                setColorsBySpecies(model[i].strSpecies);
+
+                marker = new google.maps.Marker({
+                    position: latLng,
+                    icon: myIcon,
+                    //draggable: true,
+                    map: map
+                });
+
+                //marker click handler
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        alert(i);
+                    }
+                })(marker, i));
+            };
+        };
+
+
+
+        //    //delete the old marker
+        //    if (marker) { marker.setMap(null); }
+
+        //    //set new marker
+        //    //marker = new google.maps.Marker({ position: event.latLng, map: map });
+    }
+
+    //function getFishLogOptions (){
+    //    $.ajax({
+    //        datatype: "json",
+    //        url: "/Fish/getFishLogOptions/",
+    //        type: 'POST',
+    //        success: function (data) {
+    //            userMarkerSize = parseInt(data.markerSize);
+    //            userMarkerOpacity = parseFloat(data.markerOpacity);
+
+    //            //TODO !!!!!!!!  Just load options into an object in session, then if they update them, save to db and reload the object in session.
+    //            //     this way you can just use it like an Model object with the @@ObjectName.property method, and it should be available everywhere. Could even possibly think
+    //            // about making the map a partial, but I think there is going to be so much interaction with the FishLog half of the page idk if thats a good idea. Maybe thats more
+    //            // reason to do a partial...idk....this comment got long. Maybe move some of these thoughts to onenote eventually
+    //        },
+    //        error: function () {
+    //            alert("error loading user options")
+    //        }
+    //    });
+    //}
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    $(document).ready(function(){
+
+        //************************************************************************************
+        //*** Map Options Stuff ***
+        //*************************
+        //optionsOpen = null;
+        //$(document).keypress(function(event){
+        //    var keycode = (event.keyCode ? event.keyCode : event.which);
+        //    if (optionsOpen == true){
+        //        if(keycode == '13'){
+        //            saveMapOptions();
+        //        }
+        //        else if(keyCode =='27'){
+        //            closeMapOptions();
+        //        }
+        //    }
+        //    optionsOpen = false;
+        //});
+
+        function openMapOptions(){
+            ////optionsOpen = true;
+            $("#optionsBtn").addClass("active");
+
+            $('#overlay').fadeIn('fast',function(){                 //todo: overlay not fading in here?
+                //$('#optionsDiv').animate({'top':'160px'},250);
+                $("#optionsDiv").fadeIn(250);
+            });
+        }
+
+        function closeMapOptions(){
+            $("#optionsBtn").removeClass("active");
+            $("#optionsDiv").fadeOut(250);
+            $('#overlay').fadeOut('fast');
+        }
+
+        $('#optionsBtn').click(function(){
+            openMapOptions();
+        });
+
+        $('#cancelOptionsBtn').click(function(){
+            closeMapOptions();
+        });
+
+        $("#applyOptionsBtn").click(function(){
+            saveOptions();
+        });
+
+        function saveOptions (){
+            $.ajax({
+                datatype: "json",
+                url: "/Fish/updateFishLogOptions/",
+                type: 'POST',
+                data: { 'markerSize': $("#opt_MarkerScale").val(),
+                    'markerOpacity': $("#opt_MarkerOpacity").val()
+                },
+                success: function (data) {
+                    initialize();
+                    //google.maps.event.trigger(map, 'resize');  //do this instead of full initilize sometimes?
+                    //todo: have an overlay over the background when map options is up, and use it to hide the flash whey you reload map, then once its reloaded, closeMapOptions and remove overlay
+                    closeMapOptions();
+                    //todo: if something changed in options that would affect the map:
+
+                },
+                error: function () {
+                    alert("Error Updating Map Options = " + data.toString())
+                    closeMapOptions();
+                }
+            });
+        }
+    });
+</script>
+
+<button id="optionsBtn" type="button" class="btn btn-primary optionsBtn" data-toggle="button">Options</button>
+<div id="map" class="map"></div>
+
+<div class="overlay" id="overlay" hidden="hidden"></div>
+<div class="mapOptions" id="optionsDiv" hidden="hidden">
+    <h1>Fish Log Options</h1>
+    <div>
+        <ul class="listStyleNone inp">
+            <li>@Html.Label("opt_MarkerScale", "Marker Scale", new { @class = "w250" }) @Html.TextBox("opt_MarkerScale", null, null, new { @class = "input-xsml w60" })</li>
+            <li>@Html.Label("lbl_opt_MarkerScale", "Marker Transparency", new { @class = "w250" }) @Html.TextBox("opt_MarkerOpacity", null, null, new { @class = "input-xsml w60" })</li>
+        </ul>
+        <p>
+            Now just add fancy button incrementers and checkboxes, radio btns, toggles, etc. Just give it a save button and save them all there with the .ajax thing.
+            Then you can have a close/cancel btn. Then its less calls to the DB and they can have a cancel btn.
+        </p>
+    </div>
+    <div id="optionsBtns" class="text-center">
+        <button id="applyOptionsBtn" class="btn btn-primary w100">Apply</button>
+        <button id="cancelOptionsBtn" class="btn btn-primary w100">Cancel</button>
+    </div>
+</div>
