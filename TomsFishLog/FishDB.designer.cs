@@ -62,13 +62,6 @@ namespace TomsFishLog
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EnterFish")]
-		public int EnterFish([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string strUserName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string strSpecies, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(90)")] string strLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(6,2)")] System.Nullable<decimal> decLength, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(7,2)")] System.Nullable<decimal> decWeight, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(5,2)")] System.Nullable<decimal> decWaterLevel, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(9,6)")] System.Nullable<decimal> decLatitude, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(9,6)")] System.Nullable<decimal> decLongitude)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, strUserName, strSpecies, strLocation, decLength, decWeight, decWaterLevel, decLatitude, decLongitude);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetFishByUser")]
 		public ISingleResult<spGetFishByUserResult> spGetFishByUser([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string username)
 		{
@@ -104,13 +97,6 @@ namespace TomsFishLog
 			return ((ISingleResult<getFishFromSpeciesCSVResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spEnterFish")]
-		public int spEnterFish([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="NVarChar(128)")] string userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Species", DbType="VarChar(50)")] string species, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DTCaught", DbType="DateTime")] System.Nullable<System.DateTime> dTCaught, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DTEntered", DbType="DateTime")] System.Nullable<System.DateTime> dTEntered, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LengthInches", DbType="Decimal(5,2)")] System.Nullable<decimal> lengthInches, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WeightLbs", DbType="Decimal(5,2)")] System.Nullable<decimal> weightLbs)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, species, dTCaught, dTEntered, lengthInches, weightLbs);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spCreateAnglerID")]
 		public int spCreateAnglerID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="NVarChar(128)")] string id)
 		{
@@ -125,13 +111,6 @@ namespace TomsFishLog
 			return ((ISingleResult<spGetAnglerIDResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spInsertImage")]
-		public int spInsertImage([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="NVarChar(128)")] string id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string thumbObjectKey, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(1024)")] string thumbUrl, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> thumbExpires, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string fullSizeObjectKey, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(1024)")] string fullSizeUrl, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fullSizeExpires)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, thumbObjectKey, thumbUrl, thumbExpires, fullSizeObjectKey, fullSizeUrl, fullSizeExpires);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetLast5FishById")]
 		public ISingleResult<spGetLast5FishByIdResult> spGetLast5FishById([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="NVarChar(128)")] string id)
 		{
@@ -144,6 +123,27 @@ namespace TomsFishLog
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), anglerId);
 			return ((ISingleResult<spGetSpeciesListResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spInsertImage")]
+		public int spInsertImage([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="NVarChar(128)")] string id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(26)")] string fishID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string thumbObjectKey, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(1024)")] string thumbUrl, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> thumbExpires, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string fullSizeObjectKey, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(1024)")] string fullSizeUrl, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fullSizeExpires)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, fishID, thumbObjectKey, thumbUrl, thumbExpires, fullSizeObjectKey, fullSizeUrl, fullSizeExpires);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spEnterFish")]
+		public int spEnterFish([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="NVarChar(128)")] string userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FishID", DbType="NVarChar(26)")] string fishID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Species", DbType="VarChar(50)")] string species, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DTCaught", DbType="DateTime")] System.Nullable<System.DateTime> dTCaught, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DTEntered", DbType="DateTime")] System.Nullable<System.DateTime> dTEntered, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LengthInches", DbType="Decimal(5,2)")] System.Nullable<decimal> lengthInches, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WeightLbs", DbType="Decimal(5,2)")] System.Nullable<decimal> weightLbs)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, fishID, species, dTCaught, dTEntered, lengthInches, weightLbs);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetImagesByFishID")]
+		public ISingleResult<spGetImagesByFishIDResult> spGetImagesByFishID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FishID", DbType="NVarChar(26)")] string fishID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fishID);
+			return ((ISingleResult<spGetImagesByFishIDResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -774,6 +774,158 @@ namespace TomsFishLog
 				if ((this._SpeciesName != value))
 				{
 					this._SpeciesName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spGetImagesByFishIDResult
+	{
+		
+		private int _AnglerID;
+		
+		private string _FishID;
+		
+		private string _thumbObjectKey;
+		
+		private string _thumbUrl;
+		
+		private System.Nullable<System.DateTime> _thumbExpires;
+		
+		private string _fullSizeObjectKey;
+		
+		private string _fullSizeUrl;
+		
+		private System.Nullable<System.DateTime> _fullSizeExpires;
+		
+		public spGetImagesByFishIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnglerID", DbType="Int NOT NULL")]
+		public int AnglerID
+		{
+			get
+			{
+				return this._AnglerID;
+			}
+			set
+			{
+				if ((this._AnglerID != value))
+				{
+					this._AnglerID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FishID", DbType="NVarChar(26)")]
+		public string FishID
+		{
+			get
+			{
+				return this._FishID;
+			}
+			set
+			{
+				if ((this._FishID != value))
+				{
+					this._FishID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thumbObjectKey", DbType="NVarChar(100)")]
+		public string thumbObjectKey
+		{
+			get
+			{
+				return this._thumbObjectKey;
+			}
+			set
+			{
+				if ((this._thumbObjectKey != value))
+				{
+					this._thumbObjectKey = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thumbUrl", DbType="NVarChar(1024)")]
+		public string thumbUrl
+		{
+			get
+			{
+				return this._thumbUrl;
+			}
+			set
+			{
+				if ((this._thumbUrl != value))
+				{
+					this._thumbUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thumbExpires", DbType="DateTime")]
+		public System.Nullable<System.DateTime> thumbExpires
+		{
+			get
+			{
+				return this._thumbExpires;
+			}
+			set
+			{
+				if ((this._thumbExpires != value))
+				{
+					this._thumbExpires = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fullSizeObjectKey", DbType="NVarChar(1024)")]
+		public string fullSizeObjectKey
+		{
+			get
+			{
+				return this._fullSizeObjectKey;
+			}
+			set
+			{
+				if ((this._fullSizeObjectKey != value))
+				{
+					this._fullSizeObjectKey = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fullSizeUrl", DbType="NVarChar(1024)")]
+		public string fullSizeUrl
+		{
+			get
+			{
+				return this._fullSizeUrl;
+			}
+			set
+			{
+				if ((this._fullSizeUrl != value))
+				{
+					this._fullSizeUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fullSizeExpires", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fullSizeExpires
+		{
+			get
+			{
+				return this._fullSizeExpires;
+			}
+			set
+			{
+				if ((this._fullSizeExpires != value))
+				{
+					this._fullSizeExpires = value;
 				}
 			}
 		}
