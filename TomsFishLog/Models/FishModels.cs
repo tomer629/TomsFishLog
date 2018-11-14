@@ -1,11 +1,14 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TomsFishLog.Models
 {
+    // TODO: pretty sure this outer wrapper "FishModels" doesnt need to be here.
     public class FishModels
     {
         public class Fish
         {
+            public string FishID { get; set; }
             public FishImage[] images { get; set; }
             public FishWeather weather { get; set; }
 
@@ -23,6 +26,14 @@ namespace TomsFishLog.Models
             public decimal? decLatitude { get; set; }
             public decimal? decLongitude { get; set; }
         }
+
+        public class NewFishInfo
+        {
+            public string fishID { get; set; }
+            public int lastSpecies { get; set; }
+            public float lastLat { get; set; }
+            public float lastLng { get; set; }
+        }
         
         public class RecentSpecies
         {
@@ -38,6 +49,7 @@ namespace TomsFishLog.Models
 
         public class AmazonS3Url
         {
+            [Key]
             public string objectKey { get; set; }
             public string url { get; set; }
             public DateTime expires { get; set; }
@@ -46,18 +58,12 @@ namespace TomsFishLog.Models
         public class FishImage
         {
             public ExifData ExifData { get; set; }
-            public AmazonS3Url thumb { get; set; }
-            public AmazonS3Url fullSize { get; set; }
+            public string FishID { get; set; }          
 
-            //public string strAmazonOriginalImageUrl { get; set; }
-            //public string strAmazonOriginalImageObjectKey { get; set; }
-            //public DateTime? dteAmazonOriginalImageExpires { get; set; }
-
-            //public string strAmazonThumbUrl { get; set; }
-            //public string strAmazonThumbObjectKey { get; set; }
-            //public DateTime? dteAmazonThumbExpires { get; set; }
-
+            public AmazonS3Url thumb { get; set; }      // todo this can go, replaced with AmazonS3Image below
+            public AmazonS3Url fullSize { get; set; }   // todo this can go, replaced with AmazonS3Image below
         }
+
 
         public class ExifData
         {

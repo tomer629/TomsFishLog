@@ -1,0 +1,33 @@
+﻿@model TomsFishLog.Models.ThumbnailPartialViewmodel
+
+<script>
+
+    var imageNum = 1;
+
+    //show image
+    if @Model.FishImageList.FirstOrDefault() <> null {
+        $("#fishThumb").attr("src", @Model.FishImageList.FirstOrDefault();
+    }
+
+    $(document).ready(function () {
+        //resize once image is loaded and you know its orientation
+        $("#fishThumb").load(function () {
+            if ($(this).width() > $(this).height()) {
+                $(this).width("80%");
+            }
+            else {
+                $(this).height("250px");
+            }
+        });
+    }
+</script>
+
+
+<div id="imageDiv" class="center" style="display:none;">
+    <div class="well-sm">
+        <button id="RemoveImage" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <img id="fishThumb" />
+    </div>
+</div>

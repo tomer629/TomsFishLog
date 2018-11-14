@@ -12,9 +12,12 @@ using System.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using TomsFishLog.Models;
+
+
 
 
 
@@ -50,13 +53,37 @@ namespace TomsFishLog.Controllers
 
             //load last 5 species caught into session
             // todo: change this to get all recent data like last location and... ?? other stuff maybe
-            var recentSpecies = dbClass.getRecentSpeciesByAnglerID();
-            Session["RecentSpecies"] = recentSpecies;
+            //   do it all in once DB call
 
-            return View("EnterFish");
+            // https://github.com/jasonholloway/miniguid
+
+            // fill TempData stuff needed for a new fish
+            FishModels.NewFishInfo NewFishInfo =  dbClass.getNewFishInfo();   //todo implement this later
+            Session["NewFishInfo"] = NewFishInfo;
+
+            var recentSpecies = dbClass.getRecentSpeciesByAnglerID();
+            Session["RecentSpecies"] = recentSpecies; 
+
+            FishModels.Fish fish = new FishModels.Fish();   //new 11/11/18
+            fish.FishID = NewFishInfo.fishID;               //new 11/11/18
+
+            //return View("EnterFish");
+            return View("EnterFish", fish);                       //new 11/11/18
         }
 
+        public PartialViewResult _ThumbnailPartial(string fishID)
+        {
+            Models.ThumbnailPartialViewmodel vm = new ThumbnailPartialViewmodel();
+            vm.FishID = fishID;
 
+            // get all images of the fish
+            //List<Models.FishModels.AmazonS3Url> images = dbClass.getImageUrlsForFish(fishID);
+
+            // check if the session contains the samefishId
+
+
+            return PartialView("_ThumbnailPartial", vm);
+        }
 
         public PartialViewResult _EnterFishPartial(Models.FishModels.Fish fish)
         {
@@ -264,6 +291,8 @@ namespace TomsFishLog.Controllers
                         FishModels.ExifData e = GetExifData(s);
 
                         FishModels.FishImage image = new FishModels.FishImage();
+                        FishModels.NewFishInfo newFishInfo = (FishModels.NewFishInfo) Session["NewFishInfo"];
+                        image.FishID = newFishInfo.fishID;
                         image.ExifData = e;
                         image.thumb = thumbUrl;
                         image.fullSize = fullSizeUrl;
@@ -353,36 +382,91 @@ namespace TomsFishLog.Controllers
             string longRef;
 
             //// Instantiate the reader
-            using (ExifReader reader = new ExifReader(s))
+            try
             {
-                DateTime dt = new DateTime();
-
-                reader.GetTagValue(ExifTags.DateTimeOriginal, out dt);
-                if (dt.Date < DateTime.Now.AddYears(-100)) //checking if date is *Loval 
-                { reader.GetTagValue(ExifTags.DateTimeDigitized, out dt); }
-                if (dt.Date < DateTime.Now.AddYears(-100)) //checking if date is *Loval 
-                { reader.GetTagValue(ExifTags.DateTime, out dt); }
-                e.dateTimeTaken = dt;
-
-                reader.GetTagValue(ExifTags.Orientation, out e.Orientation);
-
-                reader.GetTagValue(ExifTags.GPSAltitude, out e.GPSAltitude);
-                reader.GetTagValue(ExifTags.GPSDifferential, out e.GPSDifferential);
-                reader.GetTagValue(ExifTags.GPSImgDirection, out e.GPSImgDirection);
-                reader.GetTagValue(ExifTags.GPSLatitude, out latArray);
-                reader.GetTagValue(ExifTags.GPSLongitude, out longArray);
-                reader.GetTagValue(ExifTags.GPSLongitudeRef, out longRef);
-                reader.GetTagValue(ExifTags.GPSLatitudeRef, out latRef);
-
-                if (latArray != null && longArray != null)
+                using (ExifReader reader = new ExifReader(s))
                 {
-                    e.GPSLatitude = ConvertDegreesToDecimalDegrees(latArray, latRef);
-                    e.GPSLongitude = ConvertDegreesToDecimalDegrees(longArray, longRef);
+                    DateTime dt = new DateTime();
+
+                    reader.GetTagValue(ExifTags.DateTimeOriginal, out dt);
+                    if (dt.Date < DateTime.Now.AddYears(-100)) //checking if date is *Loval 
+                    { reader.GetTagValue(ExifTags.DateTimeDigitized, out dt); }
+                    if (dt.Date < DateTime.Now.AddYears(-100)) //checking if date is *Loval 
+                    { reader.GetTagValue(ExifTags.DateTime, out dt); }
+                    e.dateTimeTaken = dt;
+
+                    reader.GetTagValue(ExifTags.Orientation, out e.Orientation);
+
+                    reader.GetTagValue(ExifTags.GPSAltitude, out e.GPSAltitude);
+                    reader.GetTagValue(ExifTags.GPSDifferential, out e.GPSDifferential);
+                    reader.GetTagValue(ExifTags.GPSImgDirection, out e.GPSImgDirection);
+                    reader.GetTagValue(ExifTags.GPSLatitude, out latArray);
+                    reader.GetTagValue(ExifTags.GPSLongitude, out longArray);
+                    reader.GetTagValue(ExifTags.GPSLongitudeRef, out longRef);
+                    reader.GetTagValue(ExifTags.GPSLatitudeRef, out latRef);
+
+                    if (latArray != null && longArray != null)
+                    {
+                        e.GPSLatitude = ConvertDegreesToDecimalDegrees(latArray, latRef);
+                        e.GPSLongitude = ConvertDegreesToDecimalDegrees(longArray, longRef);
+                    }
                 }
             }
+            catch (Exception ex)
+            { 
+                //error.logError(ex.Message, ex.Source, ex.StackTrace, "Enter Fish", "DatabaseClass", "saveImage", HttpContext.Current.User.Identity.Name, null);
+                return e;
+            }
+            
 
             return e;
         }
+
+        [HttpPost]
+        public JsonResult DeleteImageFromS3(string objectKey)
+        {
+            try
+            {
+                AmazonS3Client s3Client = new AmazonS3Client();
+                DeleteObjectRequest request = new DeleteObjectRequest();
+
+                request.BucketName = _awsBucketName;
+                request.Key = objectKey;
+
+                s3Client.DeleteObject(request);
+                s3Client.Dispose();
+
+                return Json(true);
+            }
+            catch (Exception ex){
+                ErrorLoggingClass errorLog = new ErrorLoggingClass();
+                errorLog.logError(ex.Message, ex.Source, ex.StackTrace, "Enter Fish", "FishController", "DeleteImageFromS3", User.Identity.Name, null);
+                return Json(false);
+            }            
+        }
+
+        //private static async Task DeleteObjectNonVersionedBucketAsync()
+        //{
+        //    try
+        //    {
+        //        var deleteObjectRequest = new DeleteObjectRequest
+        //        {
+        //            BucketName = bucketName,
+        //            Key = keyName
+        //        };
+
+        //        Console.WriteLine("Deleting an object");
+        //        await AmazonS3Client.DeleteObjectAsync(deleteObjectRequest);
+        //    }
+        //    catch (AmazonS3Exception e)
+        //    {
+        //        Console.WriteLine("Error encountered on server. Message:'{0}' when writing an object", e.Message);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
+        //    }
+        //}
 
         static decimal ConvertDegreesToDecimalDegrees(double[] coordArray, string latLngRef)
         {

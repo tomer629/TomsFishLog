@@ -48,8 +48,8 @@
         if (viewport.width > 750) {
             $(".loc1").hide();
             $(".loc2").show();
-            $("#map2").height(455);
-            $("#map2").width(455);
+
+            $("#map2").height(500);
             map = new google.maps.Map(document.getElementById('map2'), mapOptions);
         }
         else {
@@ -85,8 +85,6 @@
     google.maps.event.addDomListener(window, 'load', initializeMap);
 
 
-
-
     $(document).ready(function () {
 
         //hide stuff... noUiSliders dont play nice with  hidden elements
@@ -95,6 +93,16 @@
         //$("#LureInfo").hide();
         //$("#WeatherInfo").hide();
 
+        // Check if mobile device
+        mobileAndTabletcheck = function () {
+            var mobileCheck = false;
+            (function (a) { if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true; })(navigator.userAgent || navigator.vendor || window.opera);
+            return mobileCheck;
+        }
+        var isMobile = mobileAndTabletcheck();
+        if (isMobile) {
+            $("#MobileCameraDiv").show();
+        }
 
         // Sliders
         function loadSliders() {
@@ -161,9 +169,13 @@
 
         }
 
+        //$(".map").width(window.screen.width);
+        //$(".map").width(window.screen.height);
 
-        $(".map").width(window.screen.width);
-        $(".map").width(window.screen.height);
+
+        $("#FileInput").change(function () {
+            $("#UploadFileBtn").show();
+        })
 
         $("#enterFishSubmit").click(function () {
             if ($("#speciesList").val() == "Add Species") {
@@ -204,6 +216,16 @@
 
         $("#addImageBtn").click(function () {
             $("#optionsDiv").fadeIn(250);
+        });
+
+        $("#RemoveImage").click(function () {
+
+            $.ajax({
+                url: '@Url.Action("Action", "Controller")',
+                data: { id: id }
+            }).done(function () {
+                alert('Image Removed');
+            });
         });
 
         $("#getWeatherBtn").click(function () {
@@ -321,6 +343,7 @@
                     percent.html(percentValue);
                 },
                 uploadProgress: function (event, position, total, percentComplete) {
+                    $("#progress").show();
                     var percentValue = percentComplete + '%';
                     bar.width(percentValue);
                     percent.html(percentValue);
@@ -329,33 +352,69 @@
                     var percentValue = '100%';
                     bar.width(percentValue);
                     percent.html(percentValue);
-                    $('#fu1').val('');
+                    $('#FileInput').val('');
                     //alert(d);
                     $("#uploadDiv").hide();
+                    $("#progress").hide();
                     $("#imageDiv").show();
+                    showThumbs();
 
                     //show image
-                    $("#fishThumb").attr("src", data.url)
+                    //$("#fishThumb").attr("src", data.url)   //old
 
-                    //set marker on map
+                    showThumbs();
+
+
+                    //  https://stackoverflow.com/questions/15146212/can-you-just-update-a-partial-view-instead-of-full-page-post
+                    function showThumbs() {
+                        $.ajax({
+                            url: '/Fish/_ThumbnailPartial',
+                            type: "get",
+                            data: '@Model.FishID',
+                            success: function (result) {
+                                alert("got here");
+                                $("#imageDiv").html(result);
+                            },
+                            error: function () {
+                                alert('error:  ' + result);
+                            }
+                        });
+                    }
+
+
+
+                    //resize once image is loaded and you know its orientation
+                    $("#fishThumb").load(function () {
+                        if ($(this).width() > $(this).height()) {
+                            $(this).width("80%");
+                        }
+                        else {
+                            $(this).height("250px");
+                        }
+                    });
+
+                    //set marker on map if we have cords
                     var imageLat = data.latitude;
                     var imageLng = data.longitude;
-                    var imgLatLng = new google.maps.LatLng(imageLat, imageLng);
+                    if (!((imageLat == 0) && (imageLng == 0))) {
+                        var imgLatLng = new google.maps.LatLng(imageLat, imageLng);
 
-                    //set global markerCoords variables for use with other stuff
-                    markerLat = imageLat;
-                    markerLng = imageLng;
+                        //set global markerCoords variables for use with other stuff
+                        markerLat = imageLat;
+                        markerLng = imageLng;
 
-                    if (marker) { marker.setMap(null); }                                      //delete the old marker
-                    marker = new google.maps.Marker({ position: imgLatLng, map: map });    //set new marker
-                    mapOptions.center = new google.maps.LatLng(imageLat, imageLng); //center map on this location
+                        if (marker) { marker.setMap(null); }                                      //delete the old marker
+                        marker = new google.maps.Marker({ position: imgLatLng, map: map });    //set new marker
+                        mapOptions.center = new google.maps.LatLng(imageLat, imageLng); //center map on this location.
 
+                        map.panTo(imgLatLng);
+                    }
 
                     //fill in date and time caught
-                    $("#dteDateTimeCaught_Date").val(data.imageDate);
-                    $("#dteDateTimeCaught_TimeOfDay").val(data.imageTime);
-
-                    map.panTo(imgLatLng);
+                    if (data.imageDate != "1/1/0001") {
+                        $("#dteDateTimeCaught_Date").val(data.imageDate);
+                        $("#dteDateTimeCaught_TimeOfDay").val(data.imageTime);
+                    }
 
                     //map.reloadMap();
                 },
@@ -395,26 +454,7 @@
 
 <div class="optionsDiv" id="optionsDiv" hidden="hidden">
     <div id="optionsBtns" class="text-center">
-        @*<h1>Add an Image</h1>*@
-
-        @*@using (Ajax.BeginForm("AsyncUpload", "Upload", new AjaxOptions() { HttpMethod = "POST" }, new { enctype = "multipart/form-data", id = "UploadImage" }))
-            {
-                @Html.AntiForgeryToken()
-                <input type="file" name="files" id="fu1" class="btn btn-default center"/>
-                <input type="submit" value="Upload File" />
-
-            }*@
-
-        @*<div class="progress" id="progress">
-                <div class="progress-bar" id="progress-bar">0%</div>
-            </div>*@
-        @*<div id="status"></div>*@
-
-        @*<h6 class="text-center">
-                OR
-            </h6>*@
-        @*<button id="applyOptionsBtn" class="btn btn-primary fontLarge">Take a Picture</button>*@
-
+        
     </div>
 </div>
 
@@ -424,33 +464,53 @@
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="row">
 
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="well">
-                        <div id="uploadImage" class="section">
 
-                            <div id="uploadDiv">
-                                @using (Ajax.BeginForm("AsyncUpload", "Upload", new AjaxOptions() { HttpMethod = "POST" }, new { enctype = "multipart/form-data", id = "UploadImage" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <input type="file" name="files" id="fu1" class="btn btn-default center" />
-                        <input type="submit" value="Upload File" />
-        }
+                @************************************************
+        //** Image Upload Section **
+        //***************************@
+                <div id="ImageHeader" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-header">
+                    <div class="row">
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 h3">Upload an Image</div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-top:5px;"><div id="ImageHeaderArrow" class="glyphicon glyphicon-chevron-down"></div></div>
+                    </div>
+                    <div class="section-divider"></div>
+                </div>
+                <div id="ImageSection" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div id="uploadImage" class="section">
 
-                                <div class="progress" id="progress">
-                                    <div class="progress-bar" id="progress-bar">0%</div>
-                                </div>
+                        <div id="uploadDiv" class="center">
+                            <h5 style="text-align:left;">Upload a GPS tagged image to automatically fill in location and weather info.</h5>
+                            @using (Ajax.BeginForm("AsyncUpload", "Upload", new AjaxOptions() { HttpMethod = "POST" }, new { enctype = "multipart/form-data", id = "UploadImage" }))
+        {
+                    @Html.AntiForgeryToken()
+                    <input id="FileInput" type="file" name="files" class="width100 fontLarge btn btn-default" />
+                    <input id="UploadFileBtn" type="submit" value="Upload File" class="btn btn-primary top20 bottom20 width50 fontLarge " style="display:none;" />
+}
 
-                                <h6 class="text-center">
+                            <div id="progress" class="progress top15" style="display:none;">
+                                <div class="progress-bar" id="progress-bar">0%</div>
+                            </div>
+
+                            <div id="MobileCameraDiv" style="display:none;">
+                                <h2 class="text-center">
                                     OR
-                                </h6>
-
-                                <button id="pictureBtn" class="btn btn-primary fontLarge">Take a Picture</button>
-
+                                </h2>
+                                <button id="pictureBtn" class="btn btn-primary width50 fontLarge">Take a Picture</button>
                             </div>
 
-                            <div id="imageDiv" hidden="hidden">
+                        </div>
+
+                        
+                        <div id="imageDiv" class="center" style="display:none;">
+                            @*@Html.Partial("_ThumbnailPartial")*@
+
+                            @*moved to partial view*@
+                            @*<div class="well-sm">
+                                <button id="RemoveImage" type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                                 <img id="fishThumb" />
-                            </div>
+                            </div>*@
                         </div>
                     </div>
                 </div>
@@ -458,13 +518,25 @@
                 @using (Html.BeginForm("submitFish", "Fish", FormMethod.Post, new { id = "fishForm" }))
     {
             @Html.AntiForgeryToken()
-
+            @Html.HiddenFor(m => m.FishID)
             @Html.HiddenFor(m => m.decLatitude)
             @Html.HiddenFor(m => m.decLongitude)
             @Html.HiddenFor(m => m.strSpecies)
             @Html.HiddenFor(m => m.decLengthInches)
             @Html.HiddenFor(m => m.decWeightLbs)
 
+
+
+            //***********************************************
+            //** Fish Info Section **
+            //***********************
+            <div id="FishHeader" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-header">
+                <div class="row">
+                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 h3">Fish Info</div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-top:5px;"><div id="LureHeaderArrow" class="glyphicon glyphicon-chevron-down"></div></div>
+                </div>
+                <div class="section-divider"></div>
+            </div>
             <div id="FishInfoContainer" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div id="Species" class="enterFishDiv">
                     @Html.Label("speciesList", "Species")
@@ -483,6 +555,7 @@
                     <div id="WeightSlider" class="noUiSlider noUi-target noUi-ltr noUi-horizontal"></div>
                 </div>
             </div>
+
             <div id="DateTimeInfoContainer" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -499,6 +572,11 @@
 
             <div class="clearfix visible-md visible-lg"></div>
 
+
+
+//***********************************************
+//** Lure Section **
+//******************
             <div id="LureHeader" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-header">
                 <div class="row">
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 h3">Lure Info</div>
@@ -519,6 +597,11 @@
                 </div>
             </div>
 
+
+
+//***********************************************
+//** Weather Section **
+//*********************
             <div id="WeatherHeader" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-header">
                 <div class="row">
                     <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 h3">Weather Info</div>
@@ -531,55 +614,31 @@
                     <button id="getWeatherBtn" type="button" class="btn-primary fontMed">Get Weather</button>
                 </div>
                 <div id="weatherBasics" class="left both" hidden="hidden">
-                    <ul class="list">
-                        <li>
-                            <div class="left">
-                                <div id="weatherDesc" class="left t1"></div>
-                                <div id="temp" class="left both t1"></div>
-                                <div id="feelsLikeTemp" class="left both t1"></div>
-                                <div id="windSpeed" class="left both t1"></div>
-                                <div id="windDirection" class="left both t1"></div>
-                            </div>
-                            <canvas id="icon1" width="64" height="64" style="margin-left:20px;"></canvas>
-                        </li>
-                    </ul>
+
+                    <div class="left">
+                        <div id="weatherDesc" class="left t1"></div>
+                        <div id="temp" class="left both t1"></div>
+                        <div id="feelsLikeTemp" class="left both t1"></div>
+                        <div id="windSpeed" class="left both t1"></div>
+                        <div id="windDirection" class="left both t1"></div>
+                    </div>
+                    <canvas id="icon1" width="64" height="64" style="margin-left:20px;"></canvas>
+
                 </div>
 
             </div>
+
 
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="sectionHeader">Weather <button type="button" class="btn-primary fontMed right" id="weatherRefreshBtn" href="" hidden="hidden">Refresh</button></div>
-                <div id="weatherInfo" class="section">
-                    
-                    
-                    <div id="weatherDetail left " hidden="hidden">
-                        WeatherDetail
-                    </div>
+                <div class="well">
+                    <input id="enterFishSubmit" type="button" value="Enter Fish" class="btn btn-default" />
+                    <input id="testBtn" type="button" value="testBtn" class="btn btn-default" />
                 </div>
             </div>
 
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="well">
-                        <input id="enterFishSubmit" type="button" value="Enter Fish" class="btn btn-default" />
-                        <input id="testBtn" type="button" value="testBtn" class="btn btn-default" />
-                    </div>
-                </div>
-
-                @*<div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                    <input id="addImageBtn" type="button" value="Add an Image" class="btn btn-default" />
-                </div>
-            <div class="col-md-offset-2 col-md-10">
-                <input id="enterFishSubmit" type="button" value="Enter Fish" class="btn btn-default" />
-                <input id="testBtn" type="button" value="testBtn" class="btn btn-default" />
-            </div>
-        </div>*@
-
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-                }
-
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+}
             </div>
 
             </div>
@@ -587,7 +646,7 @@
             <div class="sectionHeader loc2">Location</div>
             <div id="locationInfo2" class="section loc2" style="padding:0px;" hidden="hidden">
 
-                <div id="map2" class="map"></div>
+                <div id="map2" class="map" style="width:100%;"></div>
 
                 @*other examples here
                     https://developers.google.com/maps/documentation/javascript/examples/map-simple*@
@@ -597,16 +656,7 @@
                     @Html.TextBoxFor(m => m.strLocationName, null, new { @class = "form-control textBoxLg both" })
                 </div>
                 <div id="coordinate2" class="well well-sm"></div>
-
-
-
-
             </div>
         </div>
-
-
-
-
-
     </div>
 </div>

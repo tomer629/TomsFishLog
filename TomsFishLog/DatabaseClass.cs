@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using TomsFishLog.Models;
+using MiniGuids;
 
 namespace TomsFishLog
 {
@@ -25,23 +26,24 @@ namespace TomsFishLog
         private static readonly string _awsSecretKey = ConfigurationManager.AppSettings["AWSSecretKey"];
         private static readonly string _awsBucketName = ConfigurationManager.AppSettings["AWSBucketname"];
 
-        public bool EnterFishOld(string username, Models.FishModels.Fish fish)
-        {
-            try
-            {
-                DateTime date = new DateTime();
-                date = DateTime.Now;
-                FishDB.EnterFish(999999, username, fish.strSpecies, fish.strLocationName, fish.decLengthInches, fish.decWeightLbs, fish.decWaterLevel, fish.decLatitude, fish.decLongitude);
-                //todo fix this username =999999...not even sure wtf this is. probably from before I added userId to the user DB. Will need to get MY UserID (the int), from DB and
-                // save to Session for use here and other places I want userID
-                return true;
-            }
-            catch (Exception ex)
-            {
-                error.logError(ex.Message, ex.Source, ex.StackTrace, "Enter Fish", "DatabaseClass", "EnterFish", HttpContext.Current.User.Identity.Name, null);
-                return false;
-            }
-        }
+        //public bool EnterFishOld(string username, Models.FishModels.Fish fish)
+        //{
+        //    try
+        //    {
+        //        DateTime date = new DateTime();
+        //        date = DateTime.Now;
+        //        FishDB.EnterFish(999999, 
+        //            username, fish.strSpecies, fish.strLocationName, fish.decLengthInches, fish.decWeightLbs, fish.decWaterLevel, fish.decLatitude, fish.decLongitude);
+        //        //todo fix this username =999999...not even sure wtf this is. probably from before I added userId to the user DB. Will need to get MY UserID (the int), from DB and
+        //        // save to Session for use here and other places I want userID
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        error.logError(ex.Message, ex.Source, ex.StackTrace, "Enter Fish", "DatabaseClass", "EnterFish", HttpContext.Current.User.Identity.Name, null);
+        //        return false;
+        //    }
+        //}
 
         public bool EnterFish(Models.FishModels.Fish fish)
         {
@@ -54,7 +56,7 @@ namespace TomsFishLog
                 //DateTime dtCaught = //TODO: give user option to manually enter datetime caught
                 //dateCaught  
 
-                FishDB.spEnterFish(Id, fish.strSpecies, dtEntered, dtEntered, fish.decLengthInches, fish.decWeightLbs);
+                FishDB.spEnterFish(Id, fish.FishID, fish.strSpecies, dtEntered, dtEntered, fish.decLengthInches, fish.decWeightLbs);
                 //todo fix this username =999999...not even sure wtf this is. probably from before I added userId to the user DB. Will need to get MY UserID (the int), from DB and
                 // save to Session for use here and other places I want userID
                 //todo: fix dateCaught Parameter. Allow user to change that when entering a fish. It shouldnt always be set to DateEntered
@@ -82,7 +84,7 @@ namespace TomsFishLog
             try
             {
                 string Id = getId();
-                FishDB.spInsertImage(Id, i.thumb.objectKey, i.thumb.url, i.thumb.expires, i.fullSize.objectKey, i.fullSize.url, i.fullSize.expires);
+                FishDB.spInsertImage(Id, i.FishID, i.thumb.objectKey, i.thumb.url, i.thumb.expires, i.fullSize.objectKey, i.fullSize.url, i.fullSize.expires);
 
                 return true;
             }
@@ -92,6 +94,56 @@ namespace TomsFishLog
                 return false;
             }
         }
+
+        public FishModels.NewFishInfo getNewFishInfo() {
+            try
+            {
+                FishModels.NewFishInfo NewFishInfo = new FishModels.NewFishInfo();
+
+                //// generate FishGuid using miniguid https://github.com/jasonholloway/miniguid
+                NewFishInfo.fishID = MiniGuid.NewGuid();
+                NewFishInfo.lastSpecies = 9;
+
+                //todo get the rest...
+                //  gps cords
+                //  species caught
+
+
+                return NewFishInfo;
+            }
+            catch (Exception ex)
+            {
+                error.logError(ex.Message, ex.Source, ex.StackTrace, "Enter Fish", "DatabaseClass", "getNewFishInfo", HttpContext.Current.User.Identity.Name, null);
+                FishModels.NewFishInfo NewFishInfo = new FishModels.NewFishInfo();
+                return NewFishInfo;
+            }
+        }
+
+
+        public List<FishModels.FishImage> getImageUrlsForFish(string fishID) 
+        {
+            List<FishModels.FishImage> imgs = new List<FishModels.FishImage>();
+
+            var lst = FishDB.spGetImagesByFishID(fishID).ToList();
+
+            foreach (var a in lst) {
+                FishModels.FishImage img = new FishModels.FishImage();
+                img.FishID = a.FishID;
+                img.fullSize.objectKey = a.fullSizeObjectKey;
+                img.fullSize.url = a.fullSizeUrl;
+                // img.fullSize.expires = a.fullSizeExpires;   //fix this
+                //...etc
+                
+
+                // left off here 11/13/18...
+                    //finish thumbnail data
+
+            
+
+            }
+            return imgs;
+        }
+
 
         public string getId()
         {

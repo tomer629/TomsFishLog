@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_A38EB7_thomasgmiranda" Class="FishDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=sql5020.site4now.net;Initial Catalog=DB_A38EB7_thomasgmiranda;Persist Security Info=True;User ID=DB_A38EB7_thomasgmiranda_admin" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_A38EB7_thomasgmirandaConnectionString" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.EnterFish" Method="EnterFish">
-    <Parameter Name="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="strUserName" Type="System.String" DbType="VarChar(40)" />
-    <Parameter Name="strSpecies" Type="System.String" DbType="VarChar(60)" />
-    <Parameter Name="strLocation" Type="System.String" DbType="VarChar(90)" />
-    <Parameter Name="decLength" Type="System.Decimal" DbType="Decimal(6,2)" />
-    <Parameter Name="decWeight" Type="System.Decimal" DbType="Decimal(7,2)" />
-    <Parameter Name="decWaterLevel" Type="System.Decimal" DbType="Decimal(5,2)" />
-    <Parameter Name="decLatitude" Type="System.Decimal" DbType="Decimal(9,6)" />
-    <Parameter Name="decLongitude" Type="System.Decimal" DbType="Decimal(9,6)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.spGetFishByUser" Method="spGetFishByUser">
     <Parameter Name="username" Type="System.String" DbType="VarChar(40)" />
     <ElementType Name="spGetFishByUserResult">
@@ -65,15 +53,6 @@
       <Column Name="decLongitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.spEnterFish" Method="spEnterFish">
-    <Parameter Name="UserID" Parameter="userID" Type="System.String" DbType="NVarChar(128)" />
-    <Parameter Name="Species" Parameter="species" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="DTCaught" Parameter="dTCaught" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="DTEntered" Parameter="dTEntered" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="LengthInches" Parameter="lengthInches" Type="System.Decimal" DbType="Decimal(5,2)" />
-    <Parameter Name="WeightLbs" Parameter="weightLbs" Type="System.Decimal" DbType="Decimal(5,2)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.spCreateAnglerID" Method="spCreateAnglerID">
     <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(128)" />
     <Return Type="System.Int32" />
@@ -83,16 +62,6 @@
     <ElementType Name="spGetAnglerIDResult">
       <Column Name="AnglerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.spInsertImage" Method="spInsertImage">
-    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(128)" />
-    <Parameter Name="thumbObjectKey" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="thumbUrl" Type="System.String" DbType="NVarChar(1024)" />
-    <Parameter Name="thumbExpires" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="fullSizeObjectKey" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="fullSizeUrl" Type="System.String" DbType="NVarChar(1024)" />
-    <Parameter Name="fullSizeExpires" Type="System.DateTime" DbType="DateTime" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.spGetLast5FishById" Method="spGetLast5FishById">
     <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(128)" />
@@ -107,6 +76,40 @@
     <ElementType Name="spGetSpeciesListResult">
       <Column Name="speciesID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="SpeciesName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInsertImage" Method="spInsertImage">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="fishID" Type="System.String" DbType="NVarChar(26)" />
+    <Parameter Name="thumbObjectKey" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="thumbUrl" Type="System.String" DbType="NVarChar(1024)" />
+    <Parameter Name="thumbExpires" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fullSizeObjectKey" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="fullSizeUrl" Type="System.String" DbType="NVarChar(1024)" />
+    <Parameter Name="fullSizeExpires" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spEnterFish" Method="spEnterFish">
+    <Parameter Name="UserID" Parameter="userID" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="FishID" Parameter="fishID" Type="System.String" DbType="NVarChar(26)" />
+    <Parameter Name="Species" Parameter="species" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DTCaught" Parameter="dTCaught" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DTEntered" Parameter="dTEntered" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="LengthInches" Parameter="lengthInches" Type="System.Decimal" DbType="Decimal(5,2)" />
+    <Parameter Name="WeightLbs" Parameter="weightLbs" Type="System.Decimal" DbType="Decimal(5,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetImagesByFishID" Method="spGetImagesByFishID">
+    <Parameter Name="FishID" Parameter="fishID" Type="System.String" DbType="NVarChar(26)" />
+    <ElementType Name="spGetImagesByFishIDResult">
+      <Column Name="AnglerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FishID" Type="System.String" DbType="NVarChar(26)" CanBeNull="true" />
+      <Column Name="thumbObjectKey" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="thumbUrl" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="thumbExpires" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fullSizeObjectKey" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="fullSizeUrl" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="fullSizeExpires" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

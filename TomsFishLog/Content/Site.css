@@ -23,6 +23,28 @@ textarea {
     max-width: 280px;
 }
 
+.margin10{ margin:10px;}
+
+.top5 { margin-top:5px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top20 { margin-top:20px; }
+.top30 { margin-top:30px; }
+
+.bottom5 { margin-bottom:5px; }
+.bottom10 { margin-bottom:10px; }
+.bottom15 { margin-bottom:15px; }
+.bottom20 { margin-bottom:20px; }
+.bottom30 { margin-bottom:30px; }
+
+.center{ text-align:center; }
+.hide { display:none; }
+
+.width100 { width: 100%; max-width: 100% !important; /*bootstrap override*/ }
+.width50  { width: 50%;  max-width: 50%  !important; /*bootstrap override*/   }
+
+.fontLarge {font-size: 22px;}
+
 
 .enterFishDiv {
     display: block;
@@ -33,7 +55,7 @@ textarea {
     font-size: 14px;
     line-height: 1.428571429;
     color: #555555;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
     background-color: #ffffff;
     /*border: 1px solid #cccccc;*/
     /*border-radius: 4px;*/
@@ -58,4 +80,7 @@ textarea {
 .slider-val {
     float: right;
 }
+
+
+
 
