@@ -357,29 +357,26 @@
                     $("#uploadDiv").hide();
                     $("#progress").hide();
                     $("#imageDiv").show();
-                    showThumbs();
 
                     //show image
-                    //$("#fishThumb").attr("src", data.url)   //old
-
-                    showThumbs();
+                    $("#fishThumb").attr("src", data.url)   //old
 
 
-                    //  https://stackoverflow.com/questions/15146212/can-you-just-update-a-partial-view-instead-of-full-page-post
-                    function showThumbs() {
-                        $.ajax({
-                            url: '/Fish/_ThumbnailPartial',
-                            type: "get",
-                            data: '@Model.FishID',
-                            success: function (result) {
-                                alert("got here");
-                                $("#imageDiv").html(result);
-                            },
-                            error: function () {
-                                alert('error:  ' + result);
-                            }
-                        });
-                    }
+                    @*//  https://stackoverflow.com/questions/15146212/can-you-just-update-a-partial-view-instead-of-full-page-post
+                    //var fishID = '@Model.FishID';
+                    $.ajax({
+                        url: '/Fish/_ThumbnailPartial/',
+                        type: "GET",
+                        data: 'fishID=@Model.FishID',
+                        success: function (result) {
+                            alert("success: result=" + result);
+                            $("#imageDiv").html(result);
+                        },
+                        error: function () {
+                            alert('error: result=' + result);
+                        }
+                    });*@
+                    
 
 
 
@@ -502,15 +499,23 @@
 
                         
                         <div id="imageDiv" class="center" style="display:none;">
-                            @*@Html.Partial("_ThumbnailPartial")*@
 
-                            @*moved to partial view*@
-                            @*<div class="well-sm">
+                            <div class="well-sm">
                                 <button id="RemoveImage" type="button" class="close" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 <img id="fishThumb" />
-                            </div>*@
+                            </div>
+
+                            @*@Html.Partial("_ThumbnailPartial")*@
+
+                            @*moved to partial view*@
+                            @*<div class="well-sm">
+            <button id="RemoveImage" type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <img id="fishThumb" />
+        </div>*@
                         </div>
                     </div>
                 </div>

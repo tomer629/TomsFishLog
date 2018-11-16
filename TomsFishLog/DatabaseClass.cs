@@ -100,9 +100,8 @@ namespace TomsFishLog
             {
                 FishModels.NewFishInfo NewFishInfo = new FishModels.NewFishInfo();
 
-                //// generate FishGuid using miniguid https://github.com/jasonholloway/miniguid
-                NewFishInfo.fishID = MiniGuid.NewGuid();
-                NewFishInfo.lastSpecies = 9;
+                NewFishInfo.fishID = MiniGuid.NewGuid();  //https://github.com/jasonholloway/miniguid
+                NewFishInfo.lastSpecies = 9; //todo - fix
 
                 //todo get the rest...
                 //  gps cords
@@ -120,26 +119,19 @@ namespace TomsFishLog
         }
 
 
-        public List<FishModels.FishImage> getImageUrlsForFish(string fishID) 
+        public List<FishModels.FishImageUrl> getImageUrlsForFish(string fishID) 
         {
-            List<FishModels.FishImage> imgs = new List<FishModels.FishImage>();
+            List<FishModels.FishImageUrl> imgs = new List<FishModels.FishImageUrl>();
 
             var lst = FishDB.spGetImagesByFishID(fishID).ToList();
 
             foreach (var a in lst) {
-                FishModels.FishImage img = new FishModels.FishImage();
+                FishModels.FishImageUrl img = new FishModels.FishImageUrl();
                 img.FishID = a.FishID;
-                img.fullSize.objectKey = a.fullSizeObjectKey;
-                img.fullSize.url = a.fullSizeUrl;
-                // img.fullSize.expires = a.fullSizeExpires;   //fix this
-                //...etc
-                
+                img.thumbUrl = a.thumbUrl;
+                img.fullSizeUrl = a.fullSizeUrl;
 
-                // left off here 11/13/18...
-                    //finish thumbnail data
-
-            
-
+                imgs.Add(img);
             }
             return imgs;
         }
@@ -283,14 +275,12 @@ namespace TomsFishLog
 
         public Models.FishModels.AmazonS3Url GeneratePreSignedURL(string objectKey)
         {
-            string urlString = "";
+            //string urlString = "";
 
             Models.FishModels.AmazonS3Url AmazonS3Url = new Models.FishModels.AmazonS3Url();
 
-            AmazonS3Url.expires = DateTime.Now.AddDays(365);
+            AmazonS3Url.expires = DateTime.Now.AddDays(1); //this is needed because for some reason you cant just say: Expires = AmazonS3Url.expires below...but you can do this... weird
             AmazonS3Url.objectKey = objectKey;
-
-            DateTime expires = AmazonS3Url.expires; //this is needed because for some reason you cant just say: Expires = AmazonS3Url.expires below...but you can do this... weird
 
             try
             {
@@ -298,7 +288,7 @@ namespace TomsFishLog
                 {
                     BucketName = _awsBucketName,
                     Key = objectKey,
-                    Expires = DateTime.Now.AddDays(30)
+                    Expires = DateTime.Now.AddDays(1)
                 };
 
 

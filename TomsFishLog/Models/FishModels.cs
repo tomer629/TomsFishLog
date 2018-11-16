@@ -20,7 +20,7 @@ namespace TomsFishLog.Models
 
             public decimal? decLengthInches { get; set; }
             public decimal? decWeightLbs { get; set; }
-            
+
             public decimal? decWaterLevel { get; set; }
 
             public decimal? decLatitude { get; set; }
@@ -34,7 +34,7 @@ namespace TomsFishLog.Models
             public float lastLat { get; set; }
             public float lastLng { get; set; }
         }
-        
+
         public class RecentSpecies
         {
             public short? SpeciesID { get; set; }
@@ -47,6 +47,15 @@ namespace TomsFishLog.Models
             public decimal? markerOpacity { get; set; }
         }
 
+        public class FishImage
+        {
+            public ExifData ExifData { get; set; }
+            public string FishID { get; set; }
+
+            public AmazonS3Url thumb { get; set; }      // todo this can go, replaced with AmazonS3Image below
+            public AmazonS3Url fullSize { get; set; }   // todo this can go, replaced with AmazonS3Image below
+        }
+
         public class AmazonS3Url
         {
             [Key]
@@ -55,13 +64,12 @@ namespace TomsFishLog.Models
             public DateTime expires { get; set; }
         }
 
-        public class FishImage
+        public class FishImageUrl
         {
-            public ExifData ExifData { get; set; }
-            public string FishID { get; set; }          
-
-            public AmazonS3Url thumb { get; set; }      // todo this can go, replaced with AmazonS3Image below
-            public AmazonS3Url fullSize { get; set; }   // todo this can go, replaced with AmazonS3Image below
+            [Key]
+            public string FishID { get; set; }
+            public string thumbUrl { get; set; }
+            public string fullSizeUrl { get; set; }
         }
 
 

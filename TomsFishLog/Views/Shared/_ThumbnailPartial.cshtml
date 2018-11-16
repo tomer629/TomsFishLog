@@ -6,7 +6,7 @@
 
     //show image
     if @Model.FishImageList.FirstOrDefault() <> null {
-        $("#fishThumb").attr("src", @Model.FishImageList.FirstOrDefault();
+        $("#fishThumb").attr("src", '@Model.FishImageList.FirstOrDefault().thumbUrl');
     }
 
     $(document).ready(function () {
@@ -19,15 +19,15 @@
                 $(this).height("250px");
             }
         });
-    }
+    });
+
 </script>
 
 
-<div id="imageDiv" class="center" style="display:none;">
-    <div class="well-sm">
-        <button id="RemoveImage" type="button" class="close" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <img id="fishThumb" />
-    </div>
+
+<div class="well-sm">
+    <button id="RemoveImage" type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <img id="fishThumb" />
 </div>

@@ -1544,4 +1544,73 @@ The statement has been terminated.</errorMessage>
     <time>2018-11-11T23:18:41.5475217-06:00</time>
     <values />
   </error>
+  <error dteErrorOccured="11/15/2018" errorID="74">
+    <errorMessage>The Expires specified is null!</errorMessage>
+    <source>AWSSDK.S3</source>
+    <stackTrace>   at Amazon.S3.AmazonS3Client.GetPreSignedURL(GetPreSignedUrlRequest request) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\AmazonS3Client.Extensions.cs:line 79
+   at TomsFishLog.DatabaseClass.GeneratePreSignedURL(String objectKey) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 298</stackTrace>
+    <pageName>GeneratePreSignedURL</pageName>
+    <className>FishController</className>
+    <methodName>GeneratePreSignedURL</methodName>
+    <userID>tom</userID>
+    <time>2018-11-15T22:09:37.6818786-06:00</time>
+    <values></values>
+  </error>
+  <error dteErrorOccured="11/15/2018" errorID="75">
+    <errorMessage>The Expires specified is null!</errorMessage>
+    <source>AWSSDK.S3</source>
+    <stackTrace>   at Amazon.S3.AmazonS3Client.GetPreSignedURL(GetPreSignedUrlRequest request) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\AmazonS3Client.Extensions.cs:line 79
+   at TomsFishLog.DatabaseClass.GeneratePreSignedURL(String objectKey) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 298</stackTrace>
+    <pageName>GeneratePreSignedURL</pageName>
+    <className>FishController</className>
+    <methodName>GeneratePreSignedURL</methodName>
+    <userID>tom</userID>
+    <time>2018-11-15T22:09:43.4642094-06:00</time>
+    <values></values>
+  </error>
+  <error dteErrorOccured="11/15/2018" errorID="76">
+    <errorMessage>The Expires specified is null!</errorMessage>
+    <source>AWSSDK.S3</source>
+    <stackTrace>   at Amazon.S3.AmazonS3Client.GetPreSignedURL(GetPreSignedUrlRequest request) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\AmazonS3Client.Extensions.cs:line 79
+   at TomsFishLog.DatabaseClass.GeneratePreSignedURL(String objectKey) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 298</stackTrace>
+    <pageName>GeneratePreSignedURL</pageName>
+    <className>FishController</className>
+    <methodName>GeneratePreSignedURL</methodName>
+    <userID>tom</userID>
+    <time>2018-11-15T22:19:11.9547252-06:00</time>
+    <values></values>
+  </error>
+  <error dteErrorOccured="11/15/2018" errorID="77">
+    <errorMessage>The Expires specified is null!</errorMessage>
+    <source>AWSSDK.S3</source>
+    <stackTrace>   at Amazon.S3.AmazonS3Client.GetPreSignedURL(GetPreSignedUrlRequest request) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\AmazonS3Client.Extensions.cs:line 79
+   at TomsFishLog.DatabaseClass.GeneratePreSignedURL(String objectKey) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 298</stackTrace>
+    <pageName>GeneratePreSignedURL</pageName>
+    <className>FishController</className>
+    <methodName>GeneratePreSignedURL</methodName>
+    <userID>tom</userID>
+    <time>2018-11-15T22:19:24.2374277-06:00</time>
+    <values></values>
+  </error>
+  <error dteErrorOccured="11/15/2018" errorID="78">
+    <errorMessage>SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.</errorMessage>
+    <source>System.Data</source>
+    <stackTrace>   at System.Data.SqlClient.TdsParser.TdsExecuteRPC(SqlCommand cmd, _SqlRPC[] rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc, Boolean sync, TaskCompletionSource`1 completion, Int32 startRpc, Int32 startParam)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataContext.ExecuteMethodCall(Object instance, MethodInfo methodInfo, Object[] parameters)
+   at TomsFishLog.FishDBDataContext.spInsertImage(String id, String fishID, String thumbObjectKey, String thumbUrl, Nullable`1 thumbExpires, String fullSizeObjectKey, String fullSizeUrl, Nullable`1 fullSizeExpires) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\FishDB.designer.cs:line 145
+   at TomsFishLog.DatabaseClass.saveImage(FishImage i) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\DatabaseClass.cs:line 87</stackTrace>
+    <pageName>Enter Fish</pageName>
+    <className>DatabaseClass</className>
+    <methodName>saveImage</methodName>
+    <userID>tom</userID>
+    <time>2018-11-15T22:52:10.0941065-06:00</time>
+    <values />
+  </error>
 </errors>
