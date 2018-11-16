@@ -78,17 +78,6 @@
       <Column Name="SpeciesName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.spInsertImage" Method="spInsertImage">
-    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(128)" />
-    <Parameter Name="fishID" Type="System.String" DbType="NVarChar(26)" />
-    <Parameter Name="thumbObjectKey" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="thumbUrl" Type="System.String" DbType="NVarChar(1024)" />
-    <Parameter Name="thumbExpires" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="fullSizeObjectKey" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="fullSizeUrl" Type="System.String" DbType="NVarChar(1024)" />
-    <Parameter Name="fullSizeExpires" Type="System.DateTime" DbType="DateTime" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.spEnterFish" Method="spEnterFish">
     <Parameter Name="UserID" Parameter="userID" Type="System.String" DbType="NVarChar(128)" />
     <Parameter Name="FishID" Parameter="fishID" Type="System.String" DbType="NVarChar(26)" />
@@ -111,5 +100,16 @@
       <Column Name="fullSizeUrl" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
       <Column Name="fullSizeExpires" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.spInsertImage" Method="spInsertImage">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="fishID" Type="System.String" DbType="NVarChar(26)" />
+    <Parameter Name="thumbObjectKey" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="thumbUrl" Type="System.String" DbType="NVarChar(1024)" />
+    <Parameter Name="thumbExpires" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fullSizeObjectKey" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="fullSizeUrl" Type="System.String" DbType="NVarChar(1024)" />
+    <Parameter Name="fullSizeExpires" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

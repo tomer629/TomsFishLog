@@ -6,6 +6,7 @@ using ForecastIO;
 using ImageResizer;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using MiniGuids;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -33,20 +34,14 @@ namespace TomsFishLog.Controllers
         private static readonly string _forecastIO_API_Key = ConfigurationManager.AppSettings["ForecastIO_API_Key"];
 
 
-        //imp! changed build config for debugging, change it back for publishing: Right click Project in solution explorer -> properties >         
+        //imp! TODO: changed build config for debugging, change it back for publishing: Right click Project in solution explorer -> properties >         
 
 
-        //todo do this with json async, remember to do as much processing and validation as posible client side (javascript) so you arent paying for as many cpu cycles
-        public ActionResult submitFish(Models.FishModels.Fish fish)
-        {
-            dbClass.EnterFish(fish);
 
-            //todo if they entered a new species, add it to the species table and set a flag for this user in userOptions signaling this user has custom species.
-            //todo animate this with so it is clear it worked and then refresh the list of fish below and highlight the newly added fish.
 
-            return RedirectToAction("EnterFish", "Fish");
-        }
-
+        //*************************************************************************************************************************************************************
+        //** Main Page Actions **
+        //***********************
         public ActionResult EnterFish()
         {
             //imp !  Use a ViewModel for enter fish, it handles multiple errors really nicely. Look at register and login pages for examples of how to use.
@@ -69,36 +64,6 @@ namespace TomsFishLog.Controllers
 
             //return View("EnterFish");
             return View("EnterFish", fish);                       //new 11/11/18
-        }
-
-        public PartialViewResult _ThumbnailPartial(string fishID)
-        {
-            Models.ThumbnailPartialViewmodel vm = new ThumbnailPartialViewmodel();
-            vm.FishID = fishID;
-
-            // get all images of the fish
-            //List<Models.FishModels.AmazonS3Url> images = dbClass.getImageUrlsForFish(fishID);
-
-            // check if the session contains the samefishId
-
-
-            return PartialView("_ThumbnailPartial", vm);
-        }
-
-        public PartialViewResult _EnterFishPartial(Models.FishModels.Fish fish)
-        {
-            //todo hook up to google maps somehow, let them place the location caught on a map if they are entering the fish on website. 
-            //See if there is some way to get gps location from a phone browser.
-
-            return PartialView("_EnterFishPartial");
-        }
-
-        public PartialViewResult _fishLogPartial()
-        {
-            List<Models.FishModels.Fish> fishList = dbClass.getFishByUsername(User.Identity.Name);
-
-            //todo check for users with 0 fish entered and display message
-            return PartialView("_FishLogPartial", fishList);
         }
 
         public ActionResult Log()
@@ -127,6 +92,39 @@ namespace TomsFishLog.Controllers
             Session["FishLogOptions"] = opt;
 
             return View(fishList);
+        }
+
+        
+
+        //*************************************************************************************************************************************************************
+        //** Partial Views **
+        //*******************
+        public PartialViewResult _ThumbnailPartial(string fishID)
+        {
+            Models.ThumbnailPartialViewmodel vm = new ThumbnailPartialViewmodel();
+            vm.FishID = fishID;
+
+            // get all images of the fish
+            List<Models.FishModels.FishImageUrl> images = dbClass.getImageUrlsForFish(fishID);
+            vm.FishImageList = images;
+
+            return PartialView("_ThumbnailPartial", vm);
+        }
+
+        public PartialViewResult _EnterFishPartial(Models.FishModels.Fish fish)
+        {
+            //todo hook up to google maps somehow, let them place the location caught on a map if they are entering the fish on website. 
+            //See if there is some way to get gps location from a phone browser.
+
+            return PartialView("_EnterFishPartial");
+        }
+
+        public PartialViewResult _fishLogPartial()
+        {
+            List<Models.FishModels.Fish> fishList = dbClass.getFishByUsername(User.Identity.Name);
+
+            //todo check for users with 0 fish entered and display message
+            return PartialView("_FishLogPartial", fishList);
         }
 
         public PartialViewResult _MapPartial()
@@ -158,8 +156,12 @@ namespace TomsFishLog.Controllers
             }
             return speciesSelectList;
         }
+       
 
 
+        //*************************************************************************************************************************************************************
+        //** Json Results **
+        //******************
         public JsonResult getFishLogOptions()
         {
             Models.FishModels.FishLogOptions opt = new Models.FishModels.FishLogOptions();
@@ -181,10 +183,7 @@ namespace TomsFishLog.Controllers
 
             return Json(opt);
         }
-
-
-
-
+      
         [HttpPost]
         public JsonResult getWeatherTest(string test)
         {
@@ -201,7 +200,6 @@ namespace TomsFishLog.Controllers
             var index = (heading + 23) / 45;
             return directions[index];
         }
-
 
         [HttpPost]
         public JsonResult getWeather(decimal latitude, decimal longitude, string dateCaught, string timeCaught)
@@ -222,10 +220,6 @@ namespace TomsFishLog.Controllers
                 return Json(false);
             }
 
-
-
-
-
             float lat = (float)latitude;
             float lng = (float)longitude;
 
@@ -237,13 +231,8 @@ namespace TomsFishLog.Controllers
             fw.daily = response.daily;
             fw.hourly = response.hourly;
 
-
-
             //save response to session
             Session["FishWeather"] = fw;
-
-            //save the
-
 
             var result = new {
                 temp = fw.current.temperature,
@@ -256,21 +245,14 @@ namespace TomsFishLog.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-        public static DateTime UnixTSToDateTime(double unixTimeStamp)
-        {
-            // Unix timestamp is seconds past epoch
-            DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
-            return dtDateTime;
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public JsonResult AsyncUpload(IEnumerable<HttpPostedFileBase> files)
         {
             int count = 0;
-            string thumbNail = "";
-            decimal imageLat = 0;
+            //string thumbNail;
+            string imageUrl   = "";
+            decimal imageLat  = 0;
             decimal imageLong = 0;
             DateTime imageDateTime = new DateTime();
 
@@ -283,8 +265,8 @@ namespace TomsFishLog.Controllers
                         //resize
                         MemoryStream s1 = resizeImage(file, "thumb");
                         FishModels.AmazonS3Url thumbUrl = UploadToS3(s1, "thumb");
-                        MemoryStream s2 = resizeImage(file, "1200");
-                        FishModels.AmazonS3Url fullSizeUrl = UploadToS3(s2, "1200");
+                        MemoryStream s2 = resizeImage(file, "1000");
+                        FishModels.AmazonS3Url fullSizeUrl = UploadToS3(s2, "1000");
 
                         ////get Exif Data
                         Stream s = file.InputStream;
@@ -300,7 +282,7 @@ namespace TomsFishLog.Controllers
                         //get some stuff from first image only
                         if (count == 0)
                         {
-                            thumbNail = thumbUrl.url;
+                            imageUrl = fullSizeUrl.url;
                             imageLat = image.ExifData.GPSLatitude;
                             imageLong = image.ExifData.GPSLongitude;
                             imageDateTime = image.ExifData.dateTimeTaken;
@@ -311,20 +293,7 @@ namespace TomsFishLog.Controllers
 
                         // get weather data
                         //getWeatherData(imageLat, imageLong, image.ExifData.dateTimeTaken);
-
-                        //consider forcing the user to resize, then they can get paid version to raise their upload size.
-                        //i could also use the Javascript library from google to upload straight to S3 if I didnt have to process(resize) the images.
-
-                        //report back that we are resizing here? How is it updating status bar?
                     }
-                    //var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
-
-
-
-                    //set filename = userID(int) + timestamp or GUID 
-                    //var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
-
-
 
                     //upload to amazon S3
                     //save S3 key to DB
@@ -334,18 +303,37 @@ namespace TomsFishLog.Controllers
 
                     //start API calls for weather, water level, etc...
 
-
-
-
-
                     //file.SaveAs(path);
                     count++;
-
                 }
             }
 
-            var result = new { url = thumbNail, latitude = imageLat, longitude = imageLong, imageDate = imageDateTime.ToShortDateString(), imageTime = imageDateTime.ToShortTimeString() };
+            var result = new { url = imageUrl, latitude = imageLat, longitude = imageLong, imageDate = imageDateTime.ToShortDateString(), imageTime = imageDateTime.ToShortTimeString() };
             return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        //todo do this with json async, remember to do as much processing and validation as posible client side (javascript) so you arent paying for as many cpu cycles
+        public ActionResult submitFish(Models.FishModels.Fish fish)
+        {
+            dbClass.EnterFish(fish);
+
+            //todo if they entered a new species, add it to the species table and set a flag for this user in userOptions signaling this user has custom species.
+            //todo animate this with so it is clear it worked and then refresh the list of fish below and highlight the newly added fish.
+
+            return RedirectToAction("EnterFish", "Fish");
+        }
+
+
+
+        //*************************************************************************************************************************************************************
+        //** Other Functions **
+        //*********************
+        public static DateTime UnixTSToDateTime(double unixTimeStamp)
+        {
+            // Unix timestamp is seconds past epoch
+            DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+            return dtDateTime;
         }
 
         public MemoryStream resizeImage(HttpPostedFileBase file, string resizeOption)
@@ -353,21 +341,29 @@ namespace TomsFishLog.Controllers
             var resizeSettings = new ResizeSettings();
             resizeSettings.Format = "jpg";
 
+            Instructions instructions = new Instructions();
+            instructions.Format = "jpg";
+
             switch (resizeOption)
             {
                 case "thumb":
-                    resizeSettings.MaxWidth = 250;
-                    resizeSettings.Quality = 75;
+                    //resizeSettings.MaxWidth = 250;
+                    //resizeSettings.Quality = 75;
+                    instructions.Width = 250;
+                    instructions.JpegQuality = 75;
                     break;
 
-                case "1200":
-                    resizeSettings.MaxWidth = 1000; //todo paid: allow full size image uploads
-                    resizeSettings.Quality = 90;    //todo paid: allow higher quality uploads (ie use less compression)
+                case "1000":
+                    //resizeSettings.MaxWidth = 1000; //todo paid: allow full size image uploads
+                    //resizeSettings.Quality = 90;    //todo paid: allow higher quality uploads (ie use less compression)
+                    instructions.Width = 1000;
+                    instructions.JpegQuality = 95;
                     break;
             }
 
             MemoryStream stream = new MemoryStream();
-            ImageBuilder.Current.Build(file, stream, resizeSettings, true, true);
+            //ImageBuilder.Current.Build(file, stream, resizeSettings, true, true);
+            ImageBuilder.Current.Build(new ImageJob(file, stream, instructions, true, true));
 
             return stream;
         }
@@ -381,7 +377,7 @@ namespace TomsFishLog.Controllers
             string latRef;
             string longRef;
 
-            //// Instantiate the reader
+            // Instantiate the reader
             try
             {
                 using (ExifReader reader = new ExifReader(s))
@@ -418,7 +414,6 @@ namespace TomsFishLog.Controllers
                 return e;
             }
             
-
             return e;
         }
 
@@ -445,29 +440,6 @@ namespace TomsFishLog.Controllers
             }            
         }
 
-        //private static async Task DeleteObjectNonVersionedBucketAsync()
-        //{
-        //    try
-        //    {
-        //        var deleteObjectRequest = new DeleteObjectRequest
-        //        {
-        //            BucketName = bucketName,
-        //            Key = keyName
-        //        };
-
-        //        Console.WriteLine("Deleting an object");
-        //        await AmazonS3Client.DeleteObjectAsync(deleteObjectRequest);
-        //    }
-        //    catch (AmazonS3Exception e)
-        //    {
-        //        Console.WriteLine("Error encountered on server. Message:'{0}' when writing an object", e.Message);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
-        //    }
-        //}
-
         static decimal ConvertDegreesToDecimalDegrees(double[] coordArray, string latLngRef)
         {
             if (coordArray.Length == 3)
@@ -477,20 +449,16 @@ namespace TomsFishLog.Controllers
                    (coordArray[2] / 3600);
 
                 if (latLngRef == "S")
-                {
-                    // it is "south" therefore needs to be a negative number
-                    degrees = 0 - degrees;
+                {   
+                    degrees = 0 - degrees; // it is "south" therefore needs to be a negative number
                 }
 
                 if (latLngRef == "W")
                 {
-                    // it is "West" therefore needs to be a negative number
-                    degrees = 0 - degrees;
+                    degrees = 0 - degrees; // it is "West" therefore needs to be a negative number
                 }
 
-
                 decimal returnValue = Convert.ToDecimal(degrees);
-
                 return returnValue;
             }
             else
@@ -500,22 +468,18 @@ namespace TomsFishLog.Controllers
             }
         }
 
-
         public Models.FishModels.AmazonS3Url UploadToS3(MemoryStream stream, string testName)
         {
             try
             {
-
                 string userID = getUserID();
                 int anglerID = dbClass.getAnglerID();
+                MiniGuid g = MiniGuid.NewGuid();
 
-                Guid g = new Guid();
-                g = Guid.NewGuid();
-
-                string objectKey = string.Format("UPLOADS/{0}/{1}.jpg", anglerID.ToString(), g);       //todo put this back after testing ****888@@@@@@@@@@@@@@ 
-                //string objectKey = string.Format("UPLOADS/{0}/{1}.jpg", anglerID.ToString(), g);  /// with this it will keep overwriting the same image in S3
-
+                string objectKey = string.Format("imgs/{0}/{1}.jpg", anglerID.ToString(), g);  
+ 
                 PutObjectResponse response = new PutObjectResponse();
+
                 // Create S3 service client.             
                 using (IAmazonS3 s3Client = new AmazonS3Client(RegionEndpoint.USEast1))
                 {
@@ -532,17 +496,11 @@ namespace TomsFishLog.Controllers
                     request.Headers.CacheControl = "max-age=77760000";    //..this might be the one that sets time
                     //request.Headers["expires"] = "Thu, 01 Dec 1994 16:00:00 GMT";
 
-                    // Make service call and get back the response.                 
-                    response = s3Client.PutObject(request);
-
-                    //string objectUrl = GeneratePreSignedURL(objectKey);
+                    response = s3Client.PutObject(request);   // Make service call and get back the response. 
                 }
 
                 FishModels.AmazonS3Url s3UrlObject = new Models.FishModels.AmazonS3Url();
-
                 s3UrlObject = dbClass.GeneratePreSignedURL(objectKey);
-
-
                 return s3UrlObject;
             }
             catch (Exception ex)
@@ -559,33 +517,11 @@ namespace TomsFishLog.Controllers
             return userID;
         }
 
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //******************************************************************************
         //*******     FILTER STUFF    ***********
 
         public JsonResult filterSpecies(string[] species)
         {
-
 
             return Json(true);
         }

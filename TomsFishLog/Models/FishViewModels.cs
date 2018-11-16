@@ -10,6 +10,6 @@ namespace TomsFishLog.Models
     {
         [Key]
         public string FishID { get; set; }
-        public List<FishModels.AmazonS3Url> FishImageList { get; set; }
+        public List<FishModels.FishImageUrl> FishImageList { get; set; }
     }
 }
