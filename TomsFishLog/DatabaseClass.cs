@@ -14,6 +14,7 @@ using System.Web;
 using System.Web.Mvc;
 using TomsFishLog.Models;
 using MiniGuids;
+using Amazon;
 
 namespace TomsFishLog
 {
@@ -25,6 +26,7 @@ namespace TomsFishLog
         private static readonly string _awsAccessKey = ConfigurationManager.AppSettings["AWSAccessKey"];
         private static readonly string _awsSecretKey = ConfigurationManager.AppSettings["AWSSecretKey"];
         private static readonly string _awsBucketName = ConfigurationManager.AppSettings["AWSBucketname"];
+        private static readonly Amazon.RegionEndpoint _awsRegionEndpoint = Amazon.RegionEndpoint.USEast1;
 
         //public bool EnterFishOld(string username, Models.FishModels.Fish fish)
         //{
@@ -49,7 +51,7 @@ namespace TomsFishLog
         {
             try
             {
-                string Id = getId();
+                string Id = GetId();
 
                 DateTime dtEntered = new DateTime();
                 dtEntered = DateTime.Now;
@@ -79,11 +81,11 @@ namespace TomsFishLog
             }
         }
 
-        public bool saveImage(FishModels.FishImage i)
+        public bool SaveImage(FishModels.FishImage i)
         {
             try
             {
-                string Id = getId();
+                string Id = GetId();
                 FishDB.spInsertImage(Id, i.FishID, i.thumb.objectKey, i.thumb.url, i.thumb.expires, i.fullSize.objectKey, i.fullSize.url, i.fullSize.expires);
 
                 return true;
@@ -95,7 +97,51 @@ namespace TomsFishLog
             }
         }
 
-        public FishModels.NewFishInfo getNewFishInfo() {
+        public bool DeleteImage(string fishID, int imageNum)
+        {
+            try
+            {
+                var keys = FishDB.spGetObjectKeysForImage(fishID, imageNum).First();
+
+                DeleteS3Object(keys.fullSizeObjectKey);
+                DeleteS3Object(keys.thumbObjectKey);    // We just assume it got deleted. You can write something to clean up keys that didnt get deleted.
+                FishDB.spDeleteImage(fishID, imageNum); 
+
+                return true;
+            }
+            catch(Exception ex)
+            {
+                error.logError(ex.Message, ex.Source, ex.StackTrace, "Enter Fish", "DatabaseClass", "deleteImage", HttpContext.Current.User.Identity.Name, null);
+                return false;
+            }
+        }
+
+        private void DeleteS3Object(string objectKey)
+        {
+            try
+            {
+                AmazonS3Client client = new AmazonS3Client(_awsRegionEndpoint);
+
+                var deleteObjectRequest = new DeleteObjectRequest
+                {
+                    BucketName = _awsBucketName,
+                    Key = objectKey
+                };
+
+                client.DeleteObject(deleteObjectRequest);
+            }
+            catch (AmazonS3Exception ex)
+            {
+                error.logError(ex.Message, ex.Source, ex.StackTrace, "Enter Fish", "DatabaseClass", "DeleteS3Object", HttpContext.Current.User.Identity.Name, null);
+            }
+            catch (Exception ex)
+            {
+                error.logError(ex.Message, ex.Source, ex.StackTrace, "Enter Fish", "DatabaseClass", "DeleteS3Object", HttpContext.Current.User.Identity.Name, null);
+            }
+        }
+        
+
+        public FishModels.NewFishInfo GetNewFishInfo() {
             try
             {
                 FishModels.NewFishInfo NewFishInfo = new FishModels.NewFishInfo();
@@ -119,7 +165,7 @@ namespace TomsFishLog
         }
 
 
-        public List<FishModels.FishImageUrl> getImageUrlsForFish(string fishID) 
+        public List<FishModels.FishImageUrl> GetImageUrlsForFish(string fishID) 
         {
             List<FishModels.FishImageUrl> imgs = new List<FishModels.FishImageUrl>();
 
@@ -137,7 +183,7 @@ namespace TomsFishLog
         }
 
 
-        public string getId()
+        public string GetId()
         {
             ApplicationUser user = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(HttpContext.Current.User.Identity.GetUserId());
             return user.Id;
@@ -158,7 +204,7 @@ namespace TomsFishLog
             
         //}
 
-        public int getAnglerID()
+        public int GetAnglerID()
         {
             try
             {
@@ -174,7 +220,7 @@ namespace TomsFishLog
             }
         }
 
-        public List<Models.FishModels.Fish> getFishByUsername(string username)
+        public List<Models.FishModels.Fish> GetFishByUsername(string username)
         {
             try
             {
@@ -209,7 +255,7 @@ namespace TomsFishLog
             }
         }
 
-        public bool updateFishLogOptions(int markerSize, decimal markerOpacity)
+        public bool UpdateFishLogOptions(int markerSize, decimal markerOpacity)
         {
             try
             {
@@ -230,7 +276,7 @@ namespace TomsFishLog
         {
             try
             {
-                string Id = getId();
+                string Id = GetId();
                 var l = FishDB.spGetLast5FishById(Id).ToList();
 
                 List<FishModels.RecentSpecies> recentSpecies = new List<FishModels.RecentSpecies>();
@@ -328,7 +374,7 @@ namespace TomsFishLog
 
 
 
-        public bool saveFishWeather()
+        public bool SaveFishWeather()
         {
             //get Weather Data from session
             FishModels.FishWeather fw = new FishModels.FishWeather();

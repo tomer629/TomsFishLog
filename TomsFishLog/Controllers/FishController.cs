@@ -53,7 +53,7 @@ namespace TomsFishLog.Controllers
             // https://github.com/jasonholloway/miniguid
 
             // fill TempData stuff needed for a new fish
-            FishModels.NewFishInfo NewFishInfo =  dbClass.getNewFishInfo();   //todo implement this later
+            FishModels.NewFishInfo NewFishInfo =  dbClass.GetNewFishInfo();   //todo implement this later
             Session["NewFishInfo"] = NewFishInfo;
 
             var recentSpecies = dbClass.getRecentSpeciesByAnglerID();
@@ -68,7 +68,7 @@ namespace TomsFishLog.Controllers
 
         public ActionResult Log()
         {
-            List<Models.FishModels.Fish> fishList = dbClass.getFishByUsername(User.Identity.Name);
+            List<Models.FishModels.Fish> fishList = dbClass.GetFishByUsername(User.Identity.Name);
 
             fishList = fishList.OrderBy(m => m.dteDateTimeEntered).ToList();
             ViewData["speciesList"] = getSpeciesList(fishList);
@@ -82,7 +82,7 @@ namespace TomsFishLog.Controllers
 
         public ActionResult Log2()
         {
-            List<Models.FishModels.Fish> fishList = dbClass.getFishByUsername(User.Identity.Name);
+            List<Models.FishModels.Fish> fishList = dbClass.GetFishByUsername(User.Identity.Name);
             fishList = fishList.OrderBy(m => m.dteDateTimeEntered).ToList();
 
             Session["speciesList"] = getSpeciesList(fishList);
@@ -105,7 +105,7 @@ namespace TomsFishLog.Controllers
             vm.FishID = fishID;
 
             // get all images of the fish
-            List<Models.FishModels.FishImageUrl> images = dbClass.getImageUrlsForFish(fishID);
+            List<Models.FishModels.FishImageUrl> images = dbClass.GetImageUrlsForFish(fishID);
             vm.FishImageList = images;
 
             return PartialView("_ThumbnailPartial", vm);
@@ -121,7 +121,7 @@ namespace TomsFishLog.Controllers
 
         public PartialViewResult _fishLogPartial()
         {
-            List<Models.FishModels.Fish> fishList = dbClass.getFishByUsername(User.Identity.Name);
+            List<Models.FishModels.Fish> fishList = dbClass.GetFishByUsername(User.Identity.Name);
 
             //todo check for users with 0 fish entered and display message
             return PartialView("_FishLogPartial", fishList);
@@ -129,7 +129,7 @@ namespace TomsFishLog.Controllers
 
         public PartialViewResult _MapPartial()
         {
-            List<Models.FishModels.Fish> fishList = dbClass.getFishByUsername(User.Identity.Name);
+            List<Models.FishModels.Fish> fishList = dbClass.GetFishByUsername(User.Identity.Name);
             fishList = fishList.OrderBy(m => m.dteDateTimeEntered).ToList();
 
             //ViewData["speciesList"] = getSpeciesList(fishList);
@@ -173,7 +173,7 @@ namespace TomsFishLog.Controllers
         public JsonResult updateFishLogOptions(int markerSize, decimal markerOpacity)
         {
             //save to db
-            bool saved = dbClass.updateFishLogOptions(markerSize, markerOpacity);
+            bool saved = dbClass.UpdateFishLogOptions(markerSize, markerOpacity);
 
             //update the session
             Models.FishModels.FishLogOptions opt = new Models.FishModels.FishLogOptions();
@@ -199,6 +199,13 @@ namespace TomsFishLog.Controllers
 
             var index = (heading + 23) / 45;
             return directions[index];
+        }
+
+        [HttpPost]
+        public JsonResult deleteImage(string fishID, int imageNum)
+        {
+            bool success = dbClass.DeleteImage(fishID, imageNum);
+            return Json(success);
         }
 
         [HttpPost]
@@ -235,9 +242,9 @@ namespace TomsFishLog.Controllers
             Session["FishWeather"] = fw;
 
             var result = new {
-                temp = fw.current.temperature,
+                temp   = fw.current.temperature,
                 feelsLike = fw.current.apparentTemperature,
-                icon = fw.current.icon,
+                icon    = fw.current.icon,
                 summary = fw.current.summary,
                 windSpd = fw.current.windSpeed,
                 windDir = convertBearingToDirection(fw.current.windBearing),
@@ -251,6 +258,7 @@ namespace TomsFishLog.Controllers
         {
             int count = 0;
             //string thumbNail;
+            string fishID     = "";
             string imageUrl   = "";
             decimal imageLat  = 0;
             decimal imageLong = 0;
@@ -289,8 +297,8 @@ namespace TomsFishLog.Controllers
                         }
 
                         //save image data to DB
-                        dbClass.saveImage(image); 
-
+                        dbClass.SaveImage(image);
+                        fishID = image.FishID;
                         // get weather data
                         //getWeatherData(imageLat, imageLong, image.ExifData.dateTimeTaken);
                     }
@@ -308,7 +316,12 @@ namespace TomsFishLog.Controllers
                 }
             }
 
-            var result = new { url = imageUrl, latitude = imageLat, longitude = imageLong, imageDate = imageDateTime.ToShortDateString(), imageTime = imageDateTime.ToShortTimeString() };
+            var result = new { url       = imageUrl,
+                               //imageKey  = fishID,
+                               latitude  = imageLat,
+                               longitude = imageLong,
+                               imageDate = imageDateTime.ToShortDateString(),
+                               imageTime = imageDateTime.ToShortTimeString() };
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
@@ -473,7 +486,7 @@ namespace TomsFishLog.Controllers
             try
             {
                 string userID = getUserID();
-                int anglerID = dbClass.getAnglerID();
+                int anglerID = dbClass.GetAnglerID();
                 MiniGuid g = MiniGuid.NewGuid();
 
                 string objectKey = string.Format("imgs/{0}/{1}.jpg", anglerID.ToString(), g);  

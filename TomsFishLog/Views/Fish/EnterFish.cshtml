@@ -199,7 +199,6 @@
 
         $("#speciesList").change(function () {
 
-
             if ($("#speciesList").val() == "Add Species") {
                 $("#speciesDiv").hide(0, $("#newSpeciesDiv").show());
             }
@@ -218,13 +217,18 @@
             $("#optionsDiv").fadeIn(250);
         });
 
-        $("#RemoveImage").click(function () {
-
+        $("#RemoveImageBtn").click(function () {
             $.ajax({
-                url: '@Url.Action("Action", "Controller")',
-                data: { id: id }
-            }).done(function () {
-                alert('Image Removed');
+                url: '@Url.Action("deleteImage", "Fish")',
+                data: { fishID: '@Model.FishID', imageNum: 1 },
+                type: "POST",
+                success: function (date) {
+                    $("#uploadDiv").show();
+                    $("#imageDiv").hide();
+                },
+                error: function(){
+                    alert("error removing image");
+                }
             });
         });
 
@@ -286,8 +290,6 @@
                         $("#iconText").text(data.icon);
                         $("#windSpeed").text("Wind Speed: " + data.windSpd);
                         $("#windDirection").text("Bearing: " + data.windDir);
-
-
                         $("#weatherRefreshBtn").show();
                         $("#getWeather").hide();
                         drawIcon(data.icon);
@@ -329,6 +331,8 @@
             //skycons.remove("icon2");
         }
 
+        var imageID;
+
         // Photo Upload Progress Bar
         (function () {
             var bar = $('#progress-bar');
@@ -337,6 +341,7 @@
 
             $('#UploadImage').ajaxForm({
                 beforeSend: function () {
+                    //show progress bar
                     status.empty();
                     var percentValue = '0%';
                     bar.width(percentValue);
@@ -354,13 +359,19 @@
                     percent.html(percentValue);
                     $('#FileInput').val('');
                     //alert(d);
+                    $("#imageDiv").show();
+
+                    // reset and hide progress bar
+                    status.empty();
+                    var percentValue = '0%';-
                     $("#uploadDiv").hide();
                     $("#progress").hide();
-                    $("#imageDiv").show();
+                    bar.width(percentValue);
+                    percent.html(percentValue);
+                    $("#UploadFileBtn").hide();
 
                     //show image
                     $("#fishThumb").attr("src", data.url)   //old
-
 
                     @*//  https://stackoverflow.com/questions/15146212/can-you-just-update-a-partial-view-instead-of-full-page-post
                     //var fishID = '@Model.FishID';
@@ -375,15 +386,12 @@
                         error: function () {
                             alert('error: result=' + result);
                         }
-                    });*@
-                    
-
-
+                    });*@                    
 
                     //resize once image is loaded and you know its orientation
                     $("#fishThumb").load(function () {
                         if ($(this).width() > $(this).height()) {
-                            $(this).width("80%");
+                            $(this).width("90%");
                         }
                         else {
                             $(this).height("250px");
@@ -463,8 +471,8 @@
 
 
                 @************************************************
-        //** Image Upload Section **
-        //***************************@
+                //** Image Upload Section **
+                //***************************@
                 <div id="ImageHeader" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-header">
                     <div class="row">
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 h3">Upload an Image</div>
@@ -498,12 +506,11 @@
                         </div>
 
                         
-                        <div id="imageDiv" class="center" style="display:none;">
-
+                        <div id="imageDiv" class="center well" style="display:none;">
+                            <button id="RemoveImageBtn" type="button" class="close closeBtn" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                             <div class="well-sm">
-                                <button id="RemoveImage" type="button" class="close" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
                                 <img id="fishThumb" />
                             </div>
 
