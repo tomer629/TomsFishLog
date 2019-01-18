@@ -112,4 +112,17 @@
     <Parameter Name="fullSizeExpires" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.spDeleteImage" Method="spDeleteImage">
+    <Parameter Name="fishID" Type="System.String" DbType="VarChar(26)" />
+    <Parameter Name="imageNum" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetObjectKeysForImage" Method="spGetObjectKeysForImage">
+    <Parameter Name="fishID" Type="System.String" DbType="NVarChar(26)" />
+    <Parameter Name="imageNum" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spGetObjectKeysForImageResult">
+      <Column Name="thumbObjectKey" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="fullSizeObjectKey" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

@@ -145,6 +145,20 @@ namespace TomsFishLog
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, fishID, thumbObjectKey, thumbUrl, thumbExpires, fullSizeObjectKey, fullSizeUrl, fullSizeExpires);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spDeleteImage")]
+		public int spDeleteImage([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(26)")] string fishID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> imageNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fishID, imageNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetObjectKeysForImage")]
+		public ISingleResult<spGetObjectKeysForImageResult> spGetObjectKeysForImage([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(26)")] string fishID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> imageNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fishID, imageNum);
+			return ((ISingleResult<spGetObjectKeysForImageResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class spGetFishByUserResult
@@ -926,6 +940,50 @@ namespace TomsFishLog
 				if ((this._fullSizeExpires != value))
 				{
 					this._fullSizeExpires = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spGetObjectKeysForImageResult
+	{
+		
+		private string _thumbObjectKey;
+		
+		private string _fullSizeObjectKey;
+		
+		public spGetObjectKeysForImageResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thumbObjectKey", DbType="NVarChar(100)")]
+		public string thumbObjectKey
+		{
+			get
+			{
+				return this._thumbObjectKey;
+			}
+			set
+			{
+				if ((this._thumbObjectKey != value))
+				{
+					this._thumbObjectKey = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fullSizeObjectKey", DbType="NVarChar(1024)")]
+		public string fullSizeObjectKey
+		{
+			get
+			{
+				return this._fullSizeObjectKey;
+			}
+			set
+			{
+				if ((this._fullSizeObjectKey != value))
+				{
+					this._fullSizeObjectKey = value;
 				}
 			}
 		}

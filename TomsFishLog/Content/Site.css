@@ -65,8 +65,15 @@ textarea {
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;*/
 }
 
-.section-header{
-    margin-top:14px;
+.closeBtn {
+    position: absolute;
+    right: 20px;
+    top: 1px;
+    font-size: 36px;
+}
+
+.section-header {
+    margin-top: 14px;
 }
 
 .section-divider {

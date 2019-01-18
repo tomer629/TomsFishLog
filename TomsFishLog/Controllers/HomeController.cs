@@ -10,7 +10,8 @@ namespace TomsFishLog.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            //return View();                               //TODO put this back after testing. 
+            return RedirectToAction("EnterFish", "Fish");  //Redirecting to EnterFish to speed things up while testing.
         }
 
         public ActionResult About()
