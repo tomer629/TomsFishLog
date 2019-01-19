@@ -427,6 +427,15 @@
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\_bootstrap-datetimepicker.less" />
     <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <Content Include="AppSettingsAndKeys.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AppSettingsAndKeys.Debug.config">
+      <DependentUpon>AppSettingsAndKeys.config</DependentUpon>
+    </Content>
+    <Content Include="AppSettingsAndKeys.Release.config">
+      <DependentUpon>AppSettingsAndKeys.config</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterASP.net Fishlog Publish.pubxml" />
@@ -593,6 +602,15 @@
     <Content Include="Views\Fish\AsyncUpload.cshtml" />
     <Content Include="Views\Fish\EnterFish - Copy.cshtml" />
     <Content Include="Views\Shared\_ThumbnailPartial.cshtml" />
+    <Content Include="ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ConnectionStrings.Debug.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="ConnectionStrings.Release.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
