@@ -1668,4 +1668,96 @@ The statement has been terminated.</errorMessage>
     <time>2018-11-20T20:07:31.6726296-06:00</time>
     <values />
   </error>
+  <error dteErrorOccured="1/21/2019" errorID="81">
+    <errorMessage>The AWS Access Key Id you provided does not exist in our records.</errorMessage>
+    <source>AWSSDK.Core</source>
+    <stackTrace>   at Amazon.Runtime.Internal.HttpErrorResponseExceptionHandler.HandleException(IExecutionContext executionContext, HttpErrorResponseException exception) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\HttpErrorResponseExceptionHandler.cs:line 114
+   at Amazon.Runtime.Internal.ExceptionHandler`1.Handle(IExecutionContext executionContext, Exception exception) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs:line 38
+   at Amazon.Runtime.Internal.ErrorHandler.ProcessException(IExecutionContext executionContext, Exception exception) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs:line 204
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs:line 78
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.Signer.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\Signer.cs:line 38
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CredentialsRetriever.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CredentialsRetriever.cs:line 72
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.RetryHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\RetryHandler\RetryHandler.cs:line 84
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3KmsHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3KmsHandler.cs:line 37
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.EndpointResolver.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\EndpointResolver.cs:line 34
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3PostMarshallHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3PostMarshallHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.Marshaller.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\Marshaller.cs:line 37
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3PreMarshallHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3PreMarshallHandler.cs:line 43
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3ExceptionHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3ExceptionHandler.cs:line 48
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.ErrorCallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs:line 44
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.MetricsHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\MetricsHandler.cs:line 40
+   at Amazon.Runtime.Internal.RuntimePipeline.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\RuntimePipeline.cs:line 135
+   at Amazon.Runtime.AmazonServiceClient.Invoke[TRequest,TResponse](TRequest request, IMarshaller`2 marshaller, ResponseUnmarshaller unmarshaller) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\AmazonServiceClient.cs:line 118
+   at Amazon.S3.AmazonS3Client.PutObject(PutObjectRequest request) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Generated\_bcl45\AmazonS3Client.cs:line 3646
+   at TomsFishLog.Controllers.FishController.UploadToS3(MemoryStream stream, String testName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 512</stackTrace>
+    <pageName>Upload Image</pageName>
+    <className>FishController</className>
+    <methodName>UploadToS3</methodName>
+    <userID>tom</userID>
+    <time>2019-01-21T12:23:10.6128877-06:00</time>
+    <values></values>
+  </error>
+  <error dteErrorOccured="1/21/2019" errorID="82">
+    <errorMessage>The AWS Access Key Id you provided does not exist in our records.</errorMessage>
+    <source>AWSSDK.Core</source>
+    <stackTrace>   at Amazon.Runtime.Internal.HttpErrorResponseExceptionHandler.HandleException(IExecutionContext executionContext, HttpErrorResponseException exception) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\HttpErrorResponseExceptionHandler.cs:line 114
+   at Amazon.Runtime.Internal.ExceptionHandler`1.Handle(IExecutionContext executionContext, Exception exception) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs:line 38
+   at Amazon.Runtime.Internal.ErrorHandler.ProcessException(IExecutionContext executionContext, Exception exception) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs:line 204
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs:line 78
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.Signer.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\Signer.cs:line 38
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CredentialsRetriever.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CredentialsRetriever.cs:line 72
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.RetryHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\RetryHandler\RetryHandler.cs:line 84
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3KmsHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3KmsHandler.cs:line 37
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.EndpointResolver.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\EndpointResolver.cs:line 34
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3PostMarshallHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3PostMarshallHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.Marshaller.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\Marshaller.cs:line 37
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3PreMarshallHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3PreMarshallHandler.cs:line 43
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs:line 45
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.S3.Internal.AmazonS3ExceptionHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Custom\Internal\AmazonS3ExceptionHandler.cs:line 48
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.ErrorCallbackHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs:line 44
+   at Amazon.Runtime.Internal.PipelineHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs:line 55
+   at Amazon.Runtime.Internal.MetricsHandler.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\Handlers\MetricsHandler.cs:line 40
+   at Amazon.Runtime.Internal.RuntimePipeline.InvokeSync(IExecutionContext executionContext) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\Pipeline\RuntimePipeline.cs:line 135
+   at Amazon.Runtime.AmazonServiceClient.Invoke[TRequest,TResponse](TRequest request, IMarshaller`2 marshaller, ResponseUnmarshaller unmarshaller) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Core\Amazon.Runtime\AmazonServiceClient.cs:line 118
+   at Amazon.S3.AmazonS3Client.PutObject(PutObjectRequest request) in D:\Jenkins\jobs\v3-stage-release-dnxcore\workspace\AWSDotNetPublic\sdk\src\Services\S3\Generated\_bcl45\AmazonS3Client.cs:line 3646
+   at TomsFishLog.Controllers.FishController.UploadToS3(MemoryStream stream, String testName) in C:\Users\Thomas\Dropbox\Projects\TomsFishLog\TomsFishLog\Controllers\FishController.cs:line 512</stackTrace>
+    <pageName>Upload Image</pageName>
+    <className>FishController</className>
+    <methodName>UploadToS3</methodName>
+    <userID>tom</userID>
+    <time>2019-01-21T12:23:11.0831128-06:00</time>
+    <values></values>
+  </error>
 </errors>
