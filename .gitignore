@@ -10,6 +10,20 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+
+# Added by Tom on 01/19/19
+# Ignore Config file to hide API keys
+
+TomsFishLog/Connection_Strings.config
+Connection_Strings.config
+
+TomsFishLog/AppSettings_Keys.config
+AppSettings_Keys.config
+
+
+
+
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
