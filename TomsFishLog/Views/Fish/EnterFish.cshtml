@@ -93,6 +93,10 @@
         //$("#LureInfo").hide();
         //$("#WeatherInfo").hide();
 
+        loadSliders(true);  //initilze sliders
+        $("#Length").show();
+        $("#Weight").show();
+
         // Check if mobile device
         mobileAndTabletcheck = function () {
             var mobileCheck = false;
@@ -105,22 +109,77 @@
         }
 
         // Sliders
-        function loadSliders() {
+        function loadSliders(init) {
+
+            var SpeciesID;
+            var SpeciesName;
+            var LengthSliderMin = 5;
+            var LengthSliderMax = 25;
+            var LengthSliderStart = 10;
+            var LengthSliderStep = .25;
+            var WeigthSliderMin = 0;
+            var WeightSliderMax = 10;
+            var WeightSliderStart = 2;
+            var WeightSliderStep = .25;
+
+            if (init == true) {
+                lengthSlider();
+                weightSlider();
+            }
 
             //get values for species
+            $.ajax({
+                url: '@Url.Action("GetSliderValuesForSpecies", "Fish")',
+                data: { Species: $("#speciesList").val() },
+                type: "POST",
+                success: function (data) {
+                    SpeciesID = data.SpeciesID;
+                    SpeciesName = data.SpeciesName;
+                    LengthSliderMin = data.LengthSliderMin;
+                    LengthSliderMax = data.LengthSliderMax;
+                    LengthSliderStart = data.LengthSliderStart;
+                    LengthSliderStep = data.LengthSliderStep;
+                    WeigthSliderMin = data.WeightSliderMin;
+                    WeightSliderMax = data.WeightSliderMax;
+                    WeightSliderStart = data.WeightSliderStart;
+                    WeightSliderStep = data.WeightSliderStep;
 
-            lengthSlider();
-            weightSlider()
+                    updateSliders(LengthSliderMin, LengthSliderMax, LengthSliderStart, LengthSliderStep, WeigthSliderMin, WeightSliderMax, WeightSliderStart, WeightSliderStep);
+                },
+                error: function(){
+                    alert("error fetching slider values");
+                }
+            });
+
+            function updateSliders(lMin, lMax, lStart, lStep, wMin, wMax, wStart, wStep) {
+                LengthSlider.noUiSlider.updateOptions({
+                    start: [lStart],
+                    step: lStep,
+                    range: {
+                        'min': lMin,
+                        'max': lMax,
+                    }
+                });
+
+                WeightSlider.noUiSlider.updateOptions({
+                    start: [wStart],
+                    step: wStep,
+                    range: {
+                        'min': wMin,
+                        'max': wMax,
+                    }
+                });
+            }
 
             function lengthSlider() {
                 var LengthSlider = document.getElementById('LengthSlider');
                 noUiSlider.create(LengthSlider, {
-                    start: [12],
-                    step: .25,
+                    start: [LengthSliderStart],
+                    step: LengthSliderStep,
                     connect: true,
                     range: {
-                        'min': 5,
-                        'max': 25
+                        'min': LengthSliderMin,
+                        'max': LengthSliderMax
                     },
                     pips: {
                         mode: 'positions',
@@ -203,7 +262,7 @@
                 $("#speciesDiv").hide(0, $("#newSpeciesDiv").show());
             }
             else {
-                loadSliders();
+                loadSliders(false);
                 $("#Length").show();
                 $("#Weight").show();
             }

@@ -159,6 +159,13 @@ namespace TomsFishLog
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fishID, imageNum);
 			return ((ISingleResult<spGetObjectKeysForImageResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetSliderValuesForSpecies")]
+		public ISingleResult<GetSliderValuesForSpeciesResult> GetSliderValuesForSpecies([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Species", DbType="Int")] System.Nullable<int> species)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), species);
+			return ((ISingleResult<GetSliderValuesForSpeciesResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class spGetFishByUserResult
@@ -984,6 +991,194 @@ namespace TomsFishLog
 				if ((this._fullSizeObjectKey != value))
 				{
 					this._fullSizeObjectKey = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetSliderValuesForSpeciesResult
+	{
+		
+		private short _SpeciesID;
+		
+		private string _SpeciesName;
+		
+		private System.Nullable<short> _LengthSliderMin;
+		
+		private System.Nullable<short> _LengthSliderMax;
+		
+		private System.Nullable<decimal> _LengthSliderStart;
+		
+		private System.Nullable<decimal> _LengthSliderStep;
+		
+		private System.Nullable<short> _WeightSliderMin;
+		
+		private System.Nullable<short> _WeightSliderMax;
+		
+		private System.Nullable<decimal> _WeightSliderStart;
+		
+		private System.Nullable<decimal> _WeightSliderStep;
+		
+		public GetSliderValuesForSpeciesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SpeciesID", DbType="SmallInt NOT NULL")]
+		public short SpeciesID
+		{
+			get
+			{
+				return this._SpeciesID;
+			}
+			set
+			{
+				if ((this._SpeciesID != value))
+				{
+					this._SpeciesID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SpeciesName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string SpeciesName
+		{
+			get
+			{
+				return this._SpeciesName;
+			}
+			set
+			{
+				if ((this._SpeciesName != value))
+				{
+					this._SpeciesName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LengthSliderMin", DbType="SmallInt")]
+		public System.Nullable<short> LengthSliderMin
+		{
+			get
+			{
+				return this._LengthSliderMin;
+			}
+			set
+			{
+				if ((this._LengthSliderMin != value))
+				{
+					this._LengthSliderMin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LengthSliderMax", DbType="SmallInt")]
+		public System.Nullable<short> LengthSliderMax
+		{
+			get
+			{
+				return this._LengthSliderMax;
+			}
+			set
+			{
+				if ((this._LengthSliderMax != value))
+				{
+					this._LengthSliderMax = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LengthSliderStart", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> LengthSliderStart
+		{
+			get
+			{
+				return this._LengthSliderStart;
+			}
+			set
+			{
+				if ((this._LengthSliderStart != value))
+				{
+					this._LengthSliderStart = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LengthSliderStep", DbType="Decimal(4,2)")]
+		public System.Nullable<decimal> LengthSliderStep
+		{
+			get
+			{
+				return this._LengthSliderStep;
+			}
+			set
+			{
+				if ((this._LengthSliderStep != value))
+				{
+					this._LengthSliderStep = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightSliderMin", DbType="SmallInt")]
+		public System.Nullable<short> WeightSliderMin
+		{
+			get
+			{
+				return this._WeightSliderMin;
+			}
+			set
+			{
+				if ((this._WeightSliderMin != value))
+				{
+					this._WeightSliderMin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightSliderMax", DbType="SmallInt")]
+		public System.Nullable<short> WeightSliderMax
+		{
+			get
+			{
+				return this._WeightSliderMax;
+			}
+			set
+			{
+				if ((this._WeightSliderMax != value))
+				{
+					this._WeightSliderMax = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightSliderStart", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> WeightSliderStart
+		{
+			get
+			{
+				return this._WeightSliderStart;
+			}
+			set
+			{
+				if ((this._WeightSliderStart != value))
+				{
+					this._WeightSliderStart = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeightSliderStep", DbType="Decimal(4,2)")]
+		public System.Nullable<decimal> WeightSliderStep
+		{
+			get
+			{
+				return this._WeightSliderStep;
+			}
+			set
+			{
+				if ((this._WeightSliderStep != value))
+				{
+					this._WeightSliderStep = value;
 				}
 			}
 		}

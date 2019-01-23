@@ -30,9 +30,27 @@ namespace TomsFishLog.Models
         public class NewFishInfo
         {
             public string fishID { get; set; }
-            public int lastSpecies { get; set; }
-            public float lastLat { get; set; }
-            public float lastLng { get; set; }
+            public int LastSpecies { get; set; }
+            public float LastLat { get; set; }
+            public float LastLng { get; set; }
+
+            //public SpeciesSliderVals[] FishSpecies { get; set; }
+        }
+
+        public class SpeciesSliderVals
+        {
+            public int SpeciesID { get; set; }
+            public string SpeciesName { get; set; }
+
+            public int LengthSliderMin { get; set; }
+            public int LengthSliderMax { get; set; }
+            public decimal LengthSliderStart { get; set; }
+            public decimal LengthSliderStep { get; set; }
+            
+            public int WeightSliderMin { get; set; }
+            public int WeightSliderMax { get; set; }
+            public decimal WeightSliderStart { get; set; }
+            public decimal WeightSliderStep { get; set; }
         }
 
         public class RecentSpecies
