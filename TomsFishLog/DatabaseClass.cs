@@ -147,7 +147,7 @@ namespace TomsFishLog
                 FishModels.NewFishInfo NewFishInfo = new FishModels.NewFishInfo();
 
                 NewFishInfo.fishID = MiniGuid.NewGuid();  //https://github.com/jasonholloway/miniguid
-                NewFishInfo.lastSpecies = 9; //todo - fix
+                NewFishInfo.LastSpecies = 9; //todo - fix
 
                 //todo get the rest...
                 //  gps cords
@@ -164,6 +164,37 @@ namespace TomsFishLog
             }
         }
 
+        public FishModels.SpeciesSliderVals GetSliderValuesForSpecies (int species)
+        {
+            try
+            {
+                var vals = FishDB.GetSliderValuesForSpecies(species).First();
+                FishModels.SpeciesSliderVals s = new FishModels.SpeciesSliderVals();
+
+                s.SpeciesID = vals.SpeciesID;
+                s.SpeciesName = vals.SpeciesName;
+                s.LengthSliderMin = (int)vals.LengthSliderMin;
+                s.LengthSliderMax = (int)vals.LengthSliderMax;
+                s.LengthSliderStart = (decimal)vals.LengthSliderStart;
+                s.LengthSliderStep = (decimal)vals.LengthSliderStep;
+                s.WeightSliderMin = (int)vals.WeightSliderMin;
+                s.WeightSliderMax = (int)vals.WeightSliderMax;
+                s.WeightSliderStart = (decimal)vals.WeightSliderStart;
+                s.WeightSliderStep = (decimal)vals.WeightSliderStep;
+
+                return s;
+            }
+            catch(Exception ex)
+            {
+                // todo set defauts for when it fails
+                FishModels.SpeciesSliderVals s = new FishModels.SpeciesSliderVals();
+
+                error.logError(ex.Message, ex.Source, ex.StackTrace, "Enter Fish", "DatabaseClass", "GetSliderValuesForSpecies", HttpContext.Current.User.Identity.Name, null);
+                return s;
+            }
+            
+
+        }
 
         public List<FishModels.FishImageUrl> GetImageUrlsForFish(string fishID) 
         {

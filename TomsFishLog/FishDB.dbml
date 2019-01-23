@@ -125,4 +125,19 @@
       <Column Name="fullSizeObjectKey" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.GetSliderValuesForSpecies" Method="GetSliderValuesForSpecies">
+    <Parameter Name="Species" Parameter="species" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetSliderValuesForSpeciesResult">
+      <Column Name="SpeciesID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SpeciesName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LengthSliderMin" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LengthSliderMax" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LengthSliderStart" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="LengthSliderStep" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="WeightSliderMin" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="WeightSliderMax" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="WeightSliderStart" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="WeightSliderStep" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

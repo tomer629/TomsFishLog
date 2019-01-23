@@ -156,12 +156,19 @@ namespace TomsFishLog.Controllers
             }
             return speciesSelectList;
         }
-       
+
 
 
         //*************************************************************************************************************************************************************
         //** Json Results **
         //******************
+        public JsonResult GetSliderValuesForSpecies(int species)
+        {
+            FishModels.SpeciesSliderVals v = new FishModels.SpeciesSliderVals();
+            v = dbClass.GetSliderValuesForSpecies(species);
+            return Json(v);
+        }
+
         public JsonResult getFishLogOptions()
         {
             Models.FishModels.FishLogOptions opt = new Models.FishModels.FishLogOptions();
